@@ -61,6 +61,7 @@ STORE_COLORS = {
     "alfatah": "#457B9D",
     "naheed": "#2A9D8F",
     "daraz": "#F4A261",
+    "jalalsons": "#6A4C93",
 }
 
 # ================================================================
@@ -68,7 +69,7 @@ STORE_COLORS = {
 # ================================================================
 if page == "📊 Overview":
     st.title("Pakistani Supermarket Price Comparison Dashboard")
-    st.markdown("Real-time price intelligence across **4 major Pakistani retail chains** and **6 cities**.")
+    st.markdown("Real-time price intelligence across **5 major Pakistani retail chains** and **6 cities**.")
 
     # KPI row
     c1, c2, c3, c4, c5 = st.columns(5)
@@ -277,4 +278,4 @@ elif page == "🗂️ Raw Data Explorer":
 
 # ── Footer ────────────────────────────────────────
 st.sidebar.divider()
-st.sidebar.caption("Built with Streamlit | Data scraped from Metro, Al-Fatah, Naheed & Daraz")
+st.sidebar.caption("Built with Streamlit | Data scraped from Metro, Al-Fatah, Naheed, Daraz & Jalal Sons")

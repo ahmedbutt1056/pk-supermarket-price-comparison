@@ -2823,3 +2823,192 @@
   Products found : 79029
   Duration       : 11771s
 ================================================================================
+2026-03-12 20:55:12,653 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=shan masala -> 200
+2026-03-12 20:55:20,370 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=shan masala -> 200
+2026-03-12 20:55:28,338 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=shan masala -> 200
+2026-03-12 20:55:33,806 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=national foods recipe -> 200
+2026-03-12 20:55:38,259 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=national foods recipe -> 200
+2026-03-12 20:55:42,514 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=national foods recipe -> 200
+2026-03-12 20:55:50,860 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=nestle pakistan -> 200
+2026-03-12 20:55:55,588 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=nestle pakistan -> 200
+2026-03-12 20:56:00,837 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=nestle pakistan -> 200
+2026-03-12 20:56:08,004 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=unilever pakistan -> 200
+2026-03-12 20:56:11,862 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=unilever pakistan -> 200
+2026-03-12 20:56:16,767 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=unilever pakistan -> 200
+2026-03-12 20:56:23,759 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=olpers milk -> 200
+2026-03-12 20:56:27,880 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=olpers milk -> 200
+2026-03-12 20:56:35,402 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=olpers milk -> 200
+2026-03-12 20:56:40,019 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=tapal danedar -> 200
+2026-03-12 20:56:46,230 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=tapal danedar -> 200
+2026-03-12 20:56:51,987 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=tapal danedar -> 200
+2026-03-12 20:56:59,351 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=lipton tea -> 200
+2026-03-12 20:57:06,370 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=lipton tea -> 200
+2026-03-12 20:57:11,160 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=lipton tea -> 200
+2026-03-12 20:57:15,283 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=brooke bond tea -> 200
+2026-03-12 20:57:21,260 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=brooke bond tea -> 200
+2026-03-12 20:57:27,162 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=brooke bond tea -> 200
+2026-03-12 20:57:34,202 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=vital tea -> 200
+2026-03-12 20:57:41,190 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=vital tea -> 200
+2026-03-12 20:57:48,084 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=vital tea -> 200
+2026-03-12 20:57:53,923 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=surf excel -> 200
+2026-03-12 20:58:46,105 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=shan masala -> 200
+2026-03-12 20:58:49,948 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=shan masala -> 200
+2026-03-12 20:58:56,444 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=shan masala -> 200
+2026-03-12 20:59:04,263 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=national foods recipe -> 200
+2026-03-12 20:59:11,369 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=national foods recipe -> 200
+2026-03-12 20:59:16,992 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=national foods recipe -> 200
+2026-03-12 20:59:25,240 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=nestle pakistan -> 200
+2026-03-12 20:59:30,370 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=nestle pakistan -> 200
+2026-03-12 20:59:37,403 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=nestle pakistan -> 200
+2026-03-12 20:59:45,061 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=unilever pakistan -> 200
+2026-03-12 20:59:51,586 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=unilever pakistan -> 200
+2026-03-12 20:59:55,768 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=unilever pakistan -> 200
+2026-03-12 21:00:02,162 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=olpers milk -> 200
+2026-03-12 21:00:11,203 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=olpers milk -> 200
+2026-03-12 21:00:15,495 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=olpers milk -> 200
+2026-03-12 21:00:19,988 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=tapal danedar -> 200
+2026-03-12 21:00:25,618 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=tapal danedar -> 200
+2026-03-12 21:00:32,328 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=tapal danedar -> 200
+2026-03-12 21:00:39,894 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=lipton tea -> 200
+2026-03-12 21:00:44,585 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=lipton tea -> 200
+2026-03-12 21:00:52,310 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=lipton tea -> 200
+2026-03-12 21:00:55,730 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=brooke bond tea -> 200
+2026-03-12 21:01:02,725 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=brooke bond tea -> 200
+2026-03-12 21:01:06,787 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=brooke bond tea -> 200
+2026-03-12 21:01:10,997 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=vital tea -> 200
+2026-03-12 21:01:19,315 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=vital tea -> 200
+2026-03-12 21:01:24,947 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=vital tea -> 200
+2026-03-12 21:01:28,410 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=surf excel -> 200
+2026-03-12 21:01:32,412 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=surf excel -> 200
+2026-03-12 21:01:38,769 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=surf excel -> 200
+2026-03-12 21:01:45,741 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=ariel detergent -> 200
+2026-03-12 21:01:52,629 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=ariel detergent -> 200
+2026-03-12 21:02:00,852 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=ariel detergent -> 200
+2026-03-12 21:02:05,130 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=bonus washing -> 200
+2026-03-12 21:02:10,234 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=bonus washing -> 200
+2026-03-12 21:02:16,867 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=bonus washing -> 200
+2026-03-12 21:02:24,943 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=vim dishwash -> 200
+2026-03-12 21:02:28,624 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=vim dishwash -> 200
+2026-03-12 21:02:36,669 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=vim dishwash -> 200
+2026-03-12 21:02:40,136 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=harpic cleaner -> 200
+2026-03-12 21:02:47,920 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=harpic cleaner -> 200
+2026-03-12 21:02:55,067 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=harpic cleaner -> 200
+2026-03-12 21:03:02,820 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=mortein -> 200
+2026-03-12 21:03:09,977 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=mortein -> 200
+2026-03-12 21:03:17,882 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=mortein -> 200
+2026-03-12 21:03:22,702 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=head shoulders shampoo -> 200
+2026-03-12 21:03:26,695 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=head shoulders shampoo -> 200
+2026-03-12 21:03:34,850 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=head shoulders shampoo -> 200
+2026-03-12 21:03:42,950 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=dove soap bar -> 200
+2026-03-12 21:03:50,170 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=dove soap bar -> 200
+2026-03-12 21:03:57,876 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=dove soap bar -> 200
+2026-03-12 21:04:01,758 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=lifebuoy soap -> 200
+2026-03-12 21:04:09,510 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=lifebuoy soap -> 200
+2026-03-12 21:04:13,967 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=lifebuoy soap -> 200
+2026-03-12 21:04:17,964 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=colgate toothpaste -> 200
+2026-03-12 21:04:23,928 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=colgate toothpaste -> 200
+2026-03-12 21:04:31,351 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=colgate toothpaste -> 200
+2026-03-12 21:04:37,809 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=sensodyne -> 200
+2026-03-12 21:04:45,292 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=sensodyne -> 200
+2026-03-12 21:04:49,874 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=sensodyne -> 200
+2026-03-12 21:05:00,827 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=close up -> 200
+2026-03-12 21:05:08,952 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=close up -> 200
+2026-03-12 21:05:18,676 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=close up -> 200
+2026-03-12 21:05:24,227 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=pampers diapers -> 200
+2026-03-12 21:05:28,351 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=pampers diapers -> 200
+2026-03-12 21:05:34,618 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=pampers diapers -> 200
+2026-03-12 21:05:41,242 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=huggies diapers -> 200
+2026-03-12 21:05:46,061 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=huggies diapers -> 200
+2026-03-12 21:05:50,521 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=huggies diapers -> 200
+2026-03-12 21:05:54,424 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=cerelac baby food -> 200
+2026-03-12 21:06:00,833 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=cerelac baby food -> 200
+2026-03-12 21:06:07,257 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=cerelac baby food -> 200
+2026-03-12 21:06:14,977 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=dalda cooking oil -> 200
+2026-03-12 21:06:20,608 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=dalda cooking oil -> 200
+2026-03-12 21:06:26,183 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=dalda cooking oil -> 200
+2026-03-12 21:06:32,306 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=habib cooking oil -> 200
+2026-03-12 21:06:37,993 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=habib cooking oil -> 200
+2026-03-12 21:06:44,583 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=habib cooking oil -> 200
+2026-03-12 21:06:49,446 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=sufi cooking oil -> 200
+2026-03-12 21:06:54,104 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=sufi cooking oil -> 200
+2026-03-12 21:07:00,833 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=sufi cooking oil -> 200
+2026-03-12 21:07:06,975 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=mezan cooking oil -> 200
+2026-03-12 21:07:10,863 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=mezan cooking oil -> 200
+2026-03-12 21:07:19,118 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=mezan cooking oil -> 200
+2026-03-12 21:07:27,535 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=eva cooking oil -> 200
+2026-03-12 21:07:35,461 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=eva cooking oil -> 200
+2026-03-12 21:07:39,227 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=eva cooking oil -> 200
+2026-03-12 21:07:46,762 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=olpers -> 200
+2026-03-12 21:07:51,945 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=olpers -> 200
+2026-03-12 21:07:56,604 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=olpers -> 200
+2026-03-12 21:08:04,847 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=haleeb milk -> 200
+2026-03-12 21:08:11,669 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=haleeb milk -> 200
+2026-03-12 21:08:15,857 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=haleeb milk -> 200
+2026-03-12 21:08:24,322 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=nurpur butter -> 200
+2026-03-12 21:08:32,647 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=nurpur butter -> 200
+2026-03-12 21:08:36,444 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=nurpur butter -> 200
+2026-03-12 21:08:42,058 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=adams cheese -> 200
+2026-03-12 21:08:48,515 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=adams cheese -> 200
+2026-03-12 21:08:53,328 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=adams cheese -> 200
+2026-03-12 21:08:57,380 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=pepsi cola -> 200
+2026-03-12 21:09:04,056 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=pepsi cola -> 200
+2026-03-12 21:09:09,569 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=pepsi cola -> 200
+2026-03-12 21:09:15,506 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=coca cola pakistan -> 200
+2026-03-12 21:09:23,901 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=coca cola pakistan -> 200
+2026-03-12 21:09:28,621 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=coca cola pakistan -> 200
+2026-03-12 21:09:35,518 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=pakola drink -> 200
+2026-03-12 21:09:42,571 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=pakola drink -> 200
+2026-03-12 21:09:50,349 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=pakola drink -> 200
+2026-03-12 21:09:55,025 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=sting energy drink -> 200
+2026-03-12 21:10:02,122 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=sting energy drink -> 200
+2026-03-12 21:10:07,155 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=sting energy drink -> 200
+2026-03-12 21:10:15,297 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=mountain dew -> 200
+2026-03-12 21:10:19,176 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=mountain dew -> 200
+2026-03-12 21:10:24,597 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=mountain dew -> 200
+2026-03-12 21:10:30,132 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=mirinda -> 200
+2026-03-12 21:10:34,956 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=mirinda -> 200
+2026-03-12 21:10:42,438 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=mirinda -> 200
+2026-03-12 21:10:46,283 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=lays pakistan -> 200
+2026-03-12 21:10:54,493 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=lays pakistan -> 200
+2026-03-12 21:11:00,878 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=lays pakistan -> 200
+2026-03-12 21:11:16,814 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=kurkure chips -> 200
+2026-03-12 21:11:24,991 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=kurkure chips -> 200
+2026-03-12 21:11:30,116 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=kurkure chips -> 200
+2026-03-12 21:11:34,480 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=pringles chips -> 200
+2026-03-12 21:11:42,327 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=pringles chips -> 200
+2026-03-12 21:11:46,774 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=pringles chips -> 200
+2026-03-12 21:11:52,750 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=peak freans biscuit -> 200
+2026-03-12 21:11:58,408 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=peak freans biscuit -> 200
+2026-03-12 21:12:05,570 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=peak freans biscuit -> 200
+2026-03-12 21:12:09,830 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=lu prince biscuit -> 200
+2026-03-12 21:12:13,962 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=lu prince biscuit -> 200
+2026-03-12 21:12:18,928 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=lu prince biscuit -> 200
+2026-03-12 21:12:26,064 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=oreo pakistan -> 200
+2026-03-12 21:12:31,903 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=oreo pakistan -> 200
+2026-03-12 21:12:38,728 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=oreo pakistan -> 200
+2026-03-12 21:12:44,056 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=tuc biscuit -> 200
+2026-03-12 21:12:49,695 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=tuc biscuit -> 200
+2026-03-12 21:12:55,506 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=tuc biscuit -> 200
+2026-03-12 21:13:02,800 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=gala biscuit -> 200
+2026-03-12 21:13:09,624 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=gala biscuit -> 200
+2026-03-12 21:13:13,617 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=gala biscuit -> 200
+2026-03-12 21:13:20,287 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=knorr noodles -> 200
+2026-03-12 21:13:26,441 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=knorr noodles -> 200
+2026-03-12 21:13:33,610 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=knorr noodles -> 200
+2026-03-12 21:13:39,637 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=maggi noodles -> 200
+2026-03-12 21:13:43,717 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=maggi noodles -> 200
+2026-03-12 21:13:51,686 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=maggi noodles -> 200
+2026-03-12 21:13:57,559 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=indomie noodles -> 200
+2026-03-12 21:14:03,372 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=indomie noodles -> 200
+2026-03-12 21:14:11,740 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=indomie noodles -> 200
+2026-03-12 21:14:20,200 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=kolson spaghetti -> 200
+2026-03-12 21:14:28,673 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=kolson spaghetti -> 200
+2026-03-12 21:14:34,249 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=kolson spaghetti -> 200
+2026-03-12 21:14:39,186 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=bake parlor pasta -> 200
+2026-03-12 21:14:46,962 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=bake parlor pasta -> 200
+2026-03-12 21:14:53,592 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=bake parlor pasta -> 200
+2026-03-12 21:15:01,808 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=mitchell's ketchup -> 200
+2026-03-12 21:15:06,084 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=mitchell's ketchup -> 200
+2026-03-12 21:15:12,022 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=3&q=mitchell's ketchup -> 200
+2026-03-12 21:15:18,824 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=1&q=shangrila sauce -> 200
+2026-03-12 21:15:25,205 INFO GET https://www.daraz.pk/catalog/?ajax=true&page=2&q=shangrila sauce -> 200

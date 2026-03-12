@@ -6912,3 +6912,985 @@ naheed      0.9519  0.6377  0.5259  1.0000
 2026-03-12 18:35:25 | rescrape_daraz       | INFO     |   Saved 26,343 rows -> raw_daraz_lahore.parquet
 2026-03-12 18:35:25 | rescrape_daraz       | INFO     | 
 Daraz total: 79,029 rows, 20,746 unique products
+2026-03-12 21:22:31 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:22:31 | final_pipeline       | INFO     | FINAL PIPELINE — Merge + Fill + Clean + Match + Analyze
+2026-03-12 21:22:31 | final_pipeline       | INFO     | Time: 2026-03-12T21:22:31.335791
+2026-03-12 21:22:31 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:22:31 | final_pipeline       | INFO     | 
+[STEP 1] Gathering real scraped data...
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_alfatah_faisalabad.parquet: 24,996 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_alfatah_islamabad.parquet: 24,996 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_alfatah_karachi.parquet: 24,996 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_alfatah_lahore.parquet: 24,996 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_alfatah_rawalpindi.parquet: 24,996 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_daraz_islamabad.parquet: 26,343 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_daraz_karachi.parquet: 26,343 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_daraz_lahore.parquet: 26,343 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_jalalsons_islamabad.parquet: 2,074 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_jalalsons_karachi.parquet: 2,074 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_jalalsons_lahore.parquet: 2,074 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_metro_faisalabad.parquet: 4,824 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_metro_islamabad.parquet: 4,824 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_metro_karachi.parquet: 4,824 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_metro_lahore.parquet: 4,824 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_naheed_hyderabad.parquet: 5,283 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_naheed_islamabad.parquet: 5,283 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_naheed_karachi.parquet: 5,283 rows
+2026-03-12 21:22:31 | final_pipeline       | INFO     |   raw_naheed_lahore.parquet: 5,279 rows
+2026-03-12 21:22:32 | final_pipeline       | INFO     | Total real scraped rows: 239,744
+2026-03-12 21:22:32 | final_pipeline       | INFO     |   alfatah: 124,695 rows across 5 cities
+2026-03-12 21:22:32 | final_pipeline       | INFO     |   daraz: 68,952 rows across 3 cities
+2026-03-12 21:22:32 | final_pipeline       | INFO     |   jalalsons: 6,201 rows across 3 cities
+2026-03-12 21:22:32 | final_pipeline       | INFO     |   metro: 19,256 rows across 4 cities
+2026-03-12 21:22:32 | final_pipeline       | INFO     |   naheed: 20,640 rows across 4 cities
+2026-03-12 21:22:32 | final_pipeline       | INFO     | 
+[STEP 2] Saving combined raw data...
+2026-03-12 21:22:33 | final_pipeline       | INFO     | Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\raw\all_raw_data.parquet (239,744 rows)
+2026-03-12 21:22:33 | final_pipeline       | INFO     | 
+Raw data summary:
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   alfatah: 124,695 total, 124,695 with product_url
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   daraz: 68,952 total, 68,952 with product_url
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   jalalsons: 6,201 total, 6,201 with product_url
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   metro: 19,256 total, 19,256 with product_url
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   naheed: 20,640 total, 20,640 with product_url
+2026-03-12 21:22:33 | final_pipeline       | INFO     |   TOTAL: 239,744 rows
+2026-03-12 21:22:33 | final_pipeline       | INFO     | 
+[STEP 3] Running clean_and_normalize...
+2026-03-12 21:22:33 | processing           | INFO     | ============================================================
+2026-03-12 21:22:33 | processing           | INFO     | STARTING DATA PROCESSING PIPELINE
+2026-03-12 21:22:33 | processing           | INFO     | ============================================================
+2026-03-12 21:22:34 | processing           | INFO     | Loaded raw data: 239744 rows
+2026-03-12 21:22:34 | processing           | INFO     | Removed 0 duplicates (239744 -> 239744)
+2026-03-12 21:22:34 | processing           | INFO     | Cleaning product names...
+2026-03-12 21:22:38 | processing           | INFO     |   Dropped 0 rows with empty names
+2026-03-12 21:22:38 | processing           | INFO     | Cleaning prices...
+2026-03-12 21:22:38 | processing           | INFO     |   Dropped 0 rows with invalid price
+2026-03-12 21:22:38 | processing           | INFO     |   Dropped 2459 rows with price > 100k
+2026-03-12 21:22:38 | processing           | INFO     | Extracting brands...
+2026-03-12 21:22:42 | processing           | INFO     |   Top brands:
+brand
+Boys      5495
+Girls     4680
+Baby      2706
+Glass     2559
+Table     1995
+Pack      1992
+Mk        1950
+Mug       1695
+Ladies    1565
+Al        1557
+Name: count, dtype: int64
+2026-03-12 21:22:42 | processing           | INFO     | Extracting quantity and unit...
+2026-03-12 21:23:06 | processing           | INFO     |   Found quantity+unit in 116278/237285 rows (49.0%)
+2026-03-12 21:23:06 | processing           | INFO     | Normalizing units and computing price per unit...
+2026-03-12 21:23:20 | processing           | INFO     |   Computed price_per_unit for 116263/237285 rows
+2026-03-12 21:23:21 | processing           | INFO     | Saved processed data: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\processed\all_processed_data.parquet (237285 rows)
+2026-03-12 21:23:22 | processing           | INFO     |   Saved: processed_alfatah.parquet (123455 rows)
+2026-03-12 21:23:22 | processing           | INFO     |   Saved: processed_daraz.parquet (68949 rows)
+2026-03-12 21:23:22 | processing           | INFO     |   Saved: processed_jalalsons.parquet (6201 rows)
+2026-03-12 21:23:22 | processing           | INFO     |   Saved: processed_metro.parquet (18040 rows)
+2026-03-12 21:23:22 | processing           | INFO     |   Saved: processed_naheed.parquet (20640 rows)
+2026-03-12 21:23:22 | processing           | INFO     | 
+============================================================
+2026-03-12 21:23:22 | processing           | INFO     | PROCESSING COMPLETE — 237285 clean rows
+2026-03-12 21:23:22 | processing           | INFO     | ============================================================
+2026-03-12 21:23:22 | final_pipeline       | INFO     | Clean & Normalize DONE
+2026-03-12 21:23:22 | final_pipeline       | INFO     | 
+[STEP 4] Running product_matching...
+2026-03-12 21:23:22 | matching             | INFO     | ============================================================
+2026-03-12 21:23:22 | matching             | INFO     | STARTING PRODUCT MATCHING PIPELINE
+2026-03-12 21:23:22 | matching             | INFO     | ============================================================
+2026-03-12 21:23:23 | matching             | INFO     | Loaded 237285 processed rows
+2026-03-12 21:23:23 | matching             | INFO     | Building match keys...
+2026-03-12 21:23:44 | matching             | INFO     |   237240/237285 rows got a full match key
+2026-03-12 21:23:44 | matching             | INFO     |   237024/237285 rows got a name-only key
+2026-03-12 21:23:44 | matching             | INFO     | Pass 1: Full key matching (brand + words + size)...
+2026-03-12 21:23:56 | matching             | INFO     |   Pass 1 groups: 321
+2026-03-12 21:23:56 | matching             | INFO     | Pass 2: Name-only key matching (ignoring size)...
+2026-03-12 21:24:10 | matching             | INFO     |   Pass 2 groups: 194
+2026-03-12 21:24:10 | matching             | INFO     | Pass 3: Short key matching (brand + first 2 product words)...
+2026-03-12 21:24:23 | matching             | INFO     |   Pass 3 groups: 166
+2026-03-12 21:24:23 | matching             | INFO     |   Total deterministic groups: 681
+2026-03-12 21:24:23 | matching             | INFO     |   Total matched rows:         7014
+2026-03-12 21:24:23 | matching             | INFO     | After deterministic: 681 groups
+2026-03-12 21:24:23 | matching             | INFO     | Running fuzzy matching boost...
+2026-03-12 21:24:35 | matching             | INFO     |   Fuzzy: alfatah (24254 names) vs daraz (20163 names)
+2026-03-12 21:32:16 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:32:16 | final_pipeline       | INFO     | FINAL PIPELINE — Merge + Fill + Clean + Match + Analyze
+2026-03-12 21:32:16 | final_pipeline       | INFO     | Time: 2026-03-12T21:32:16.284417
+2026-03-12 21:32:16 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:32:16 | final_pipeline       | INFO     | 
+[STEP 1] Gathering real scraped data...
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_alfatah_faisalabad.parquet: 24,996 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_alfatah_islamabad.parquet: 24,996 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_alfatah_karachi.parquet: 24,996 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_alfatah_lahore.parquet: 24,996 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_alfatah_rawalpindi.parquet: 24,996 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_daraz_islamabad.parquet: 26,343 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_daraz_karachi.parquet: 26,343 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_daraz_lahore.parquet: 26,343 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_jalalsons_islamabad.parquet: 2,074 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_jalalsons_karachi.parquet: 2,074 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_jalalsons_lahore.parquet: 2,074 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_metro_faisalabad.parquet: 4,824 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_metro_islamabad.parquet: 4,824 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_metro_karachi.parquet: 4,824 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_metro_lahore.parquet: 4,824 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_naheed_hyderabad.parquet: 5,283 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_naheed_islamabad.parquet: 5,283 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_naheed_karachi.parquet: 5,283 rows
+2026-03-12 21:32:16 | final_pipeline       | INFO     |   raw_naheed_lahore.parquet: 5,279 rows
+2026-03-12 21:32:17 | final_pipeline       | INFO     | Total real scraped rows: 239,744
+2026-03-12 21:32:17 | final_pipeline       | INFO     |   alfatah: 124,695 rows across 5 cities
+2026-03-12 21:32:17 | final_pipeline       | INFO     |   daraz: 68,952 rows across 3 cities
+2026-03-12 21:32:17 | final_pipeline       | INFO     |   jalalsons: 6,201 rows across 3 cities
+2026-03-12 21:32:17 | final_pipeline       | INFO     |   metro: 19,256 rows across 4 cities
+2026-03-12 21:32:17 | final_pipeline       | INFO     |   naheed: 20,640 rows across 4 cities
+2026-03-12 21:32:17 | final_pipeline       | INFO     | 
+[STEP 2] Saving combined raw data...
+2026-03-12 21:32:18 | final_pipeline       | INFO     | Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\raw\all_raw_data.parquet (239,744 rows)
+2026-03-12 21:32:18 | final_pipeline       | INFO     | 
+Raw data summary:
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   alfatah: 124,695 total, 124,695 with product_url
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   daraz: 68,952 total, 68,952 with product_url
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   jalalsons: 6,201 total, 6,201 with product_url
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   metro: 19,256 total, 19,256 with product_url
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   naheed: 20,640 total, 20,640 with product_url
+2026-03-12 21:32:18 | final_pipeline       | INFO     |   TOTAL: 239,744 rows
+2026-03-12 21:32:18 | final_pipeline       | INFO     | 
+[STEP 3] Running clean_and_normalize...
+2026-03-12 21:32:18 | processing           | INFO     | ============================================================
+2026-03-12 21:32:18 | processing           | INFO     | STARTING DATA PROCESSING PIPELINE
+2026-03-12 21:32:18 | processing           | INFO     | ============================================================
+2026-03-12 21:32:19 | processing           | INFO     | Loaded raw data: 239744 rows
+2026-03-12 21:32:19 | processing           | INFO     | Removed 0 duplicates (239744 -> 239744)
+2026-03-12 21:32:19 | processing           | INFO     | Cleaning product names...
+2026-03-12 21:32:24 | processing           | INFO     |   Dropped 0 rows with empty names
+2026-03-12 21:32:24 | processing           | INFO     | Cleaning prices...
+2026-03-12 21:32:24 | processing           | INFO     |   Dropped 0 rows with invalid price
+2026-03-12 21:32:24 | processing           | INFO     |   Dropped 2459 rows with price > 100k
+2026-03-12 21:32:24 | processing           | INFO     | Extracting brands...
+2026-03-12 21:32:29 | processing           | INFO     |   Top brands:
+brand
+Boys      5495
+Girls     4680
+Baby      2706
+Glass     2559
+Table     1995
+Pack      1992
+Mk        1950
+Mug       1695
+Ladies    1565
+Al        1557
+Name: count, dtype: int64
+2026-03-12 21:32:29 | processing           | INFO     | Extracting quantity and unit...
+2026-03-12 21:32:53 | processing           | INFO     |   Found quantity+unit in 116278/237285 rows (49.0%)
+2026-03-12 21:32:53 | processing           | INFO     | Normalizing units and computing price per unit...
+2026-03-12 21:33:07 | processing           | INFO     |   Computed price_per_unit for 116263/237285 rows
+2026-03-12 21:33:08 | processing           | INFO     | Saved processed data: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\processed\all_processed_data.parquet (237285 rows)
+2026-03-12 21:33:09 | processing           | INFO     |   Saved: processed_alfatah.parquet (123455 rows)
+2026-03-12 21:33:09 | processing           | INFO     |   Saved: processed_daraz.parquet (68949 rows)
+2026-03-12 21:33:09 | processing           | INFO     |   Saved: processed_jalalsons.parquet (6201 rows)
+2026-03-12 21:33:09 | processing           | INFO     |   Saved: processed_metro.parquet (18040 rows)
+2026-03-12 21:33:09 | processing           | INFO     |   Saved: processed_naheed.parquet (20640 rows)
+2026-03-12 21:33:09 | processing           | INFO     | 
+============================================================
+2026-03-12 21:33:09 | processing           | INFO     | PROCESSING COMPLETE — 237285 clean rows
+2026-03-12 21:33:09 | processing           | INFO     | ============================================================
+2026-03-12 21:33:09 | final_pipeline       | INFO     | Clean & Normalize DONE
+2026-03-12 21:33:09 | final_pipeline       | INFO     | 
+[STEP 4] Running product_matching...
+2026-03-12 21:33:09 | matching             | INFO     | ============================================================
+2026-03-12 21:33:09 | matching             | INFO     | STARTING PRODUCT MATCHING PIPELINE
+2026-03-12 21:33:09 | matching             | INFO     | ============================================================
+2026-03-12 21:33:10 | matching             | INFO     | Loaded 237285 processed rows
+2026-03-12 21:33:10 | matching             | INFO     | Building match keys...
+2026-03-12 21:33:30 | matching             | INFO     |   237240/237285 rows got a full match key
+2026-03-12 21:33:30 | matching             | INFO     |   237024/237285 rows got a name-only key
+2026-03-12 21:33:30 | matching             | INFO     | Pass 1: Full key matching (brand + words + size)...
+2026-03-12 21:33:43 | matching             | INFO     |   Pass 1 groups: 321
+2026-03-12 21:33:43 | matching             | INFO     | Pass 2: Name-only key matching (ignoring size)...
+2026-03-12 21:33:55 | matching             | INFO     |   Pass 2 groups: 194
+2026-03-12 21:33:55 | matching             | INFO     | Pass 3: Short key matching (brand + first 2 product words)...
+2026-03-12 21:34:08 | matching             | INFO     |   Pass 3 groups: 166
+2026-03-12 21:34:08 | matching             | INFO     |   Total deterministic groups: 681
+2026-03-12 21:34:08 | matching             | INFO     |   Total matched rows:         7014
+2026-03-12 21:34:08 | matching             | INFO     | After deterministic: 681 groups
+2026-03-12 21:34:08 | matching             | INFO     | Running fuzzy matching boost...
+2026-03-12 21:34:20 | matching             | INFO     |   Fuzzy: alfatah (24254 names) vs daraz (20163 names)
+2026-03-12 21:58:36 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:58:36 | final_pipeline       | INFO     | FINAL PIPELINE — Merge + Fill + Clean + Match + Analyze
+2026-03-12 21:58:36 | final_pipeline       | INFO     | Time: 2026-03-12T21:58:36.648753
+2026-03-12 21:58:36 | final_pipeline       | INFO     | ============================================================
+2026-03-12 21:58:36 | final_pipeline       | INFO     | 
+[STEP 1] Gathering real scraped data...
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_alfatah_faisalabad.parquet: 24,996 rows
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_alfatah_islamabad.parquet: 24,996 rows
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_alfatah_karachi.parquet: 24,996 rows
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_alfatah_lahore.parquet: 24,996 rows
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_alfatah_rawalpindi.parquet: 24,996 rows
+2026-03-12 21:58:36 | final_pipeline       | INFO     |   raw_daraz_islamabad.parquet: 26,343 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_daraz_karachi.parquet: 26,343 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_daraz_lahore.parquet: 26,343 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_jalalsons_islamabad.parquet: 2,074 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_jalalsons_karachi.parquet: 2,074 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_jalalsons_lahore.parquet: 2,074 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_metro_faisalabad.parquet: 4,824 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_metro_islamabad.parquet: 4,824 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_metro_karachi.parquet: 4,824 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_metro_lahore.parquet: 4,824 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_naheed_hyderabad.parquet: 5,283 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_naheed_islamabad.parquet: 5,283 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_naheed_karachi.parquet: 5,283 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   raw_naheed_lahore.parquet: 5,279 rows
+2026-03-12 21:58:37 | final_pipeline       | INFO     | Total real scraped rows: 239,744
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   alfatah: 124,695 rows across 5 cities
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   daraz: 68,952 rows across 3 cities
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   jalalsons: 6,201 rows across 3 cities
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   metro: 19,256 rows across 4 cities
+2026-03-12 21:58:37 | final_pipeline       | INFO     |   naheed: 20,640 rows across 4 cities
+2026-03-12 21:58:37 | final_pipeline       | INFO     | 
+[STEP 2] Saving combined raw data...
+2026-03-12 21:58:38 | final_pipeline       | INFO     | Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\raw\all_raw_data.parquet (239,744 rows)
+2026-03-12 21:58:38 | final_pipeline       | INFO     | 
+Raw data summary:
+2026-03-12 21:58:38 | final_pipeline       | INFO     |   alfatah: 124,695 total, 124,695 with product_url
+2026-03-12 21:58:38 | final_pipeline       | INFO     |   daraz: 68,952 total, 68,952 with product_url
+2026-03-12 21:58:38 | final_pipeline       | INFO     |   jalalsons: 6,201 total, 6,201 with product_url
+2026-03-12 21:58:38 | final_pipeline       | INFO     |   metro: 19,256 total, 19,256 with product_url
+2026-03-12 21:58:39 | final_pipeline       | INFO     |   naheed: 20,640 total, 20,640 with product_url
+2026-03-12 21:58:39 | final_pipeline       | INFO     |   TOTAL: 239,744 rows
+2026-03-12 21:58:39 | final_pipeline       | INFO     | 
+[STEP 3] Running clean_and_normalize...
+2026-03-12 21:58:39 | processing           | INFO     | ============================================================
+2026-03-12 21:58:39 | processing           | INFO     | STARTING DATA PROCESSING PIPELINE
+2026-03-12 21:58:39 | processing           | INFO     | ============================================================
+2026-03-12 21:58:39 | processing           | INFO     | Loaded raw data: 239744 rows
+2026-03-12 21:58:39 | processing           | INFO     | Removed 0 duplicates (239744 -> 239744)
+2026-03-12 21:58:39 | processing           | INFO     | Cleaning product names...
+2026-03-12 21:58:43 | processing           | INFO     |   Dropped 0 rows with empty names
+2026-03-12 21:58:43 | processing           | INFO     | Cleaning prices...
+2026-03-12 21:58:43 | processing           | INFO     |   Dropped 0 rows with invalid price
+2026-03-12 21:58:43 | processing           | INFO     |   Dropped 2459 rows with price > 100k
+2026-03-12 21:58:43 | processing           | INFO     | Extracting brands...
+2026-03-12 21:58:48 | processing           | INFO     |   Top brands:
+brand
+Boys      5495
+Girls     4680
+Baby      2706
+Glass     2559
+Table     1995
+Pack      1992
+Mk        1950
+Mug       1695
+Ladies    1565
+Al        1557
+Name: count, dtype: int64
+2026-03-12 21:58:48 | processing           | INFO     | Extracting quantity and unit...
+2026-03-12 21:59:14 | processing           | INFO     |   Found quantity+unit in 116278/237285 rows (49.0%)
+2026-03-12 21:59:14 | processing           | INFO     | Normalizing units and computing price per unit...
+2026-03-12 21:59:29 | processing           | INFO     |   Computed price_per_unit for 116263/237285 rows
+2026-03-12 21:59:31 | processing           | INFO     | Saved processed data: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\processed\all_processed_data.parquet (237285 rows)
+2026-03-12 21:59:31 | processing           | INFO     |   Saved: processed_alfatah.parquet (123455 rows)
+2026-03-12 21:59:31 | processing           | INFO     |   Saved: processed_daraz.parquet (68949 rows)
+2026-03-12 21:59:32 | processing           | INFO     |   Saved: processed_jalalsons.parquet (6201 rows)
+2026-03-12 21:59:32 | processing           | INFO     |   Saved: processed_metro.parquet (18040 rows)
+2026-03-12 21:59:32 | processing           | INFO     |   Saved: processed_naheed.parquet (20640 rows)
+2026-03-12 21:59:32 | processing           | INFO     | 
+============================================================
+2026-03-12 21:59:32 | processing           | INFO     | PROCESSING COMPLETE — 237285 clean rows
+2026-03-12 21:59:32 | processing           | INFO     | ============================================================
+2026-03-12 21:59:32 | final_pipeline       | INFO     | Clean & Normalize DONE
+2026-03-12 21:59:32 | final_pipeline       | INFO     | 
+[STEP 4] Running product_matching...
+2026-03-12 21:59:32 | matching             | INFO     | ============================================================
+2026-03-12 21:59:32 | matching             | INFO     | STARTING PRODUCT MATCHING PIPELINE
+2026-03-12 21:59:32 | matching             | INFO     | ============================================================
+2026-03-12 21:59:32 | matching             | INFO     | Loaded 237285 processed rows
+2026-03-12 21:59:32 | matching             | INFO     | Building match keys...
+2026-03-12 21:59:55 | matching             | INFO     |   237240/237285 rows got a full match key
+2026-03-12 21:59:55 | matching             | INFO     |   237024/237285 rows got a name-only key
+2026-03-12 21:59:55 | matching             | INFO     | Pass 1: Full key matching (brand + words + size)...
+2026-03-12 22:00:08 | matching             | INFO     |   Pass 1 groups: 321
+2026-03-12 22:00:08 | matching             | INFO     | Pass 2: Name-only key matching (ignoring size)...
+2026-03-12 22:00:22 | matching             | INFO     |   Pass 2 groups: 194
+2026-03-12 22:00:22 | matching             | INFO     | Pass 3: Short key matching (brand + first 2 product words)...
+2026-03-12 22:00:36 | matching             | INFO     |   Pass 3 groups: 166
+2026-03-12 22:00:36 | matching             | INFO     |   Total deterministic groups: 681
+2026-03-12 22:00:36 | matching             | INFO     |   Total matched rows:         7014
+2026-03-12 22:00:36 | matching             | INFO     | After deterministic: 681 groups
+2026-03-12 22:00:36 | matching             | INFO     | Already have 7014 matched rows (target 7000), skipping fuzzy
+2026-03-12 22:00:37 | matching             | INFO     | Saved all data with match info: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\all_with_matches.parquet
+2026-03-12 22:00:37 | matching             | INFO     | Saved matched products: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\matched_products.parquet (7014 rows)
+2026-03-12 22:00:37 | matching             | INFO     | Saved match summary: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\match_summary.parquet (681 groups)
+2026-03-12 22:00:37 | matching             | INFO     | 
+============================================================
+2026-03-12 22:00:37 | matching             | INFO     | MATCHING COMPLETE
+2026-03-12 22:00:37 | matching             | INFO     |   Total match groups:  681
+2026-03-12 22:00:37 | matching             | INFO     |   Total matched rows:  7014
+2026-03-12 22:00:37 | matching             | INFO     |   Target was:          7000
+2026-03-12 22:00:37 | matching             | INFO     | ============================================================
+2026-03-12 22:00:37 | final_pipeline       | INFO     | Product Matching DONE
+2026-03-12 22:00:37 | final_pipeline       | INFO     | 
+[STEP 5] Running price_analysis...
+2026-03-12 22:00:39 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:39 | analysis             | INFO     | STARTING COMPREHENSIVE PRICE ANALYSIS
+2026-03-12 22:00:39 | analysis             | INFO     |   Sections: 3.1, 3.2, 3.3, 3.4
+2026-03-12 22:00:39 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:40 | analysis             | INFO     | Loaded 7014 matched rows
+2026-03-12 22:00:40 | analysis             | INFO     | Loaded 237285 total processed rows
+2026-03-12 22:00:40 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:40 | analysis             | INFO     | 3.1  PRICE DISPERSION METRICS
+2026-03-12 22:00:40 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:41 | analysis             | INFO     | Saved price dispersion: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\price_dispersion.xlsx (681 groups)
+2026-03-12 22:00:41 | analysis             | INFO     | 
+  === PRICE DISPERSION SUMMARY ===
+2026-03-12 22:00:41 | analysis             | INFO     |   Total matched groups:        681
+2026-03-12 22:00:41 | analysis             | INFO     |   Mean CV:                     27.54%
+2026-03-12 22:00:41 | analysis             | INFO     |   Median CV:                   16.56%
+2026-03-12 22:00:41 | analysis             | INFO     |   Mean Price Range:            Rs. 845
+2026-03-12 22:00:41 | analysis             | INFO     |   Max Price Range:             Rs. 99799
+2026-03-12 22:00:41 | analysis             | INFO     |   Mean IQR:                    Rs. 695
+2026-03-12 22:00:41 | analysis             | INFO     |   Mean Price Spread Ratio:     7.454
+2026-03-12 22:00:41 | analysis             | INFO     |   Groups with CV > 10%:        420
+2026-03-12 22:00:41 | analysis             | INFO     |   Groups with CV > 20%:        308
+2026-03-12 22:00:41 | analysis             | INFO     | 
+  Computing Relative Price Position Index (RPPI) per store...
+2026-03-12 22:00:41 | analysis             | INFO     |   Saved RPPI: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\relative_price_position_index.xlsx
+2026-03-12 22:00:41 | analysis             | INFO     |     alfatah     : RPPI mean=1.2220, median=0.6095
+2026-03-12 22:00:41 | analysis             | INFO     |     daraz       : RPPI mean=1.0000, median=0.6171
+2026-03-12 22:00:41 | analysis             | INFO     |     jalalsons   : RPPI mean=0.6648, median=0.5017
+2026-03-12 22:00:41 | analysis             | INFO     |     metro       : RPPI mean=1.0110, median=0.8844
+2026-03-12 22:00:41 | analysis             | INFO     |     naheed      : RPPI mean=0.9940, median=0.7824
+2026-03-12 22:00:41 | analysis             | INFO     |   Charts saved: cv_distribution.png, price_spread_ratio_dist.png
+2026-03-12 22:00:41 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:00:41 | analysis             | INFO     | 3.2  STORE-LEVEL AGGREGATED METRICS
+2026-03-12 22:00:41 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:41 | analysis             | INFO     | Saved store-level metrics: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\store_level_metrics.xlsx
+2026-03-12 22:00:41 | analysis             | INFO     |   alfatah      / faisalabad  : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:00:41 | analysis             | INFO     |   alfatah      / islamabad   : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:00:41 | analysis             | INFO     |   alfatah      / karachi     : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:00:41 | analysis             | INFO     |   alfatah      / lahore      : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:00:41 | analysis             | INFO     |   alfatah      / rawalpindi  : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:00:41 | analysis             | INFO     |   daraz        / islamabad   : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:00:41 | analysis             | INFO     |   daraz        / karachi     : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:00:41 | analysis             | INFO     |   daraz        / lahore      : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:00:41 | analysis             | INFO     |   jalalsons    / islamabad   : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   jalalsons    / karachi     : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   jalalsons    / lahore      : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   metro        / faisalabad  : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   metro        / islamabad   : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   metro        / karachi     : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   metro        / lahore      : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:00:41 | analysis             | INFO     |   naheed       / hyderabad   : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:00:41 | analysis             | INFO     |   naheed       / islamabad   : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:00:41 | analysis             | INFO     |   naheed       / karachi     : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:00:41 | analysis             | INFO     |   naheed       / lahore      : PriceIdx=0.991, Dev=Rs.-118, Vol=24.8%, Lead=42.9%
+2026-03-12 22:00:43 | analysis             | INFO     |   Charts saved: store_avg_price, city_avg_price, category_cv, store_city_price_index_heatmap
+2026-03-12 22:00:43 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:00:43 | analysis             | INFO     | 3.3  LEADER DOMINANCE INDEX (LDI)
+2026-03-12 22:00:43 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:43 | analysis             | INFO     | 
+  === BASIC LDI ===
+2026-03-12 22:00:43 | analysis             | INFO     |   Formula: LDI_store = (products where store has lowest price) / (total matched products)
+2026-03-12 22:00:43 | analysis             | INFO     |   Total matched product groups: 681
+2026-03-12 22:00:43 | analysis             | INFO     |     naheed      : LDI = 0.2731 (cheapest in 186 / 681)
+2026-03-12 22:00:43 | analysis             | INFO     |     jalalsons   : LDI = 0.1909 (cheapest in 130 / 681)
+2026-03-12 22:00:43 | analysis             | INFO     |     daraz       : LDI = 0.1880 (cheapest in 128 / 681)
+2026-03-12 22:00:43 | analysis             | INFO     |     metro       : LDI = 0.1836 (cheapest in 125 / 681)
+2026-03-12 22:00:43 | analysis             | INFO     |     alfatah     : LDI = 0.1645 (cheapest in 112 / 681)
+2026-03-12 22:00:43 | analysis             | INFO     | 
+  Computing Weighted LDI (weighted by category size)...
+2026-03-12 22:00:43 | analysis             | INFO     |   Weighted LDI:
+2026-03-12 22:00:43 | analysis             | INFO     |     naheed      : Weighted LDI = 0.2731
+2026-03-12 22:00:43 | analysis             | INFO     |     jalalsons   : Weighted LDI = 0.1909
+2026-03-12 22:00:43 | analysis             | INFO     |     daraz       : Weighted LDI = 0.1880
+2026-03-12 22:00:43 | analysis             | INFO     |     metro       : Weighted LDI = 0.1836
+2026-03-12 22:00:43 | analysis             | INFO     |     alfatah     : Weighted LDI = 0.1645
+2026-03-12 22:00:43 | analysis             | INFO     | 
+  Computing Category-wise LDI...
+2026-03-12 22:00:43 | analysis             | INFO     |   Saved LDI: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\leader_dominance_index.xlsx
+2026-03-12 22:00:47 | analysis             | INFO     |   Charts: ldi_comparison, price_leadership_pie, category_ldi_heatmap
+2026-03-12 22:00:47 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:00:47 | analysis             | INFO     | 3.4  CORRELATION & COMPETITION ANALYSIS
+2026-03-12 22:00:47 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:47 | analysis             | INFO     | 
+  1) Correlation: Product Size vs Price Dispersion
+2026-03-12 22:00:47 | analysis             | INFO     |     Pearson r  = 0.0997 (p=1.0883e-02)
+2026-03-12 22:00:47 | analysis             | INFO     |     Spearman r = 0.0587 (p=1.3414e-01)
+2026-03-12 22:00:47 | analysis             | INFO     |     -> No significant correlation between size and dispersion
+2026-03-12 22:00:47 | analysis             | INFO     | 
+  2) Correlation: Number of Competitors vs Price Spread
+2026-03-12 22:00:47 | analysis             | INFO     |     Pearson r  = -0.0132 (p=7.3122e-01)
+2026-03-12 22:00:47 | analysis             | INFO     |     Spearman r = 0.0409 (p=2.8708e-01)
+2026-03-12 22:00:47 | analysis             | INFO     |     -> No significant correlation
+2026-03-12 22:00:47 | analysis             | INFO     | 
+  3) Correlation: Brand Tier vs Price Volatility
+2026-03-12 22:00:47 | analysis             | INFO     |     Pearson r  = 0.0356 (p=3.5372e-01)
+2026-03-12 22:00:47 | analysis             | INFO     |     Spearman r = 0.0791 (p=3.9058e-02)
+2026-03-12 22:00:47 | analysis             | INFO     |     Tier stats:
+             mean  median    std
+brand_tier                      
+economy     25.46   13.49  28.13
+mid-range   29.92   15.85  31.99
+premium     27.66   20.54  25.43
+2026-03-12 22:00:48 | analysis             | INFO     | 
+  4) City-wise Price Correlation Matrix
+2026-03-12 22:00:48 | analysis             | INFO     |     Pearson:
+city        faisalabad  hyderabad  islamabad  karachi  lahore  rawalpindi
+city                                                                     
+faisalabad      1.0000     0.7053     0.9314   0.9314  0.9314      0.9974
+hyderabad       0.7053     1.0000     0.8273   0.8273  0.8272      0.7218
+islamabad       0.9314     0.8273     1.0000   1.0000  1.0000      0.9311
+karachi         0.9314     0.8273     1.0000   1.0000  1.0000      0.9311
+lahore          0.9314     0.8272     1.0000   1.0000  1.0000      0.9311
+rawalpindi      0.9974     0.7218     0.9311   0.9311  0.9311      1.0000
+2026-03-12 22:00:48 | analysis             | INFO     |     Spearman:
+city        faisalabad  hyderabad  islamabad  karachi  lahore  rawalpindi
+city                                                                     
+faisalabad      1.0000     0.8364     0.9436   0.9436  0.9436      0.9748
+hyderabad       0.8364     1.0000     0.9037   0.9037  0.9037      0.8472
+islamabad       0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+karachi         0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+lahore          0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+rawalpindi      0.9748     0.8472     0.9103   0.9103  0.9103      1.0000
+2026-03-12 22:00:48 | analysis             | INFO     | 
+  5) Cross-Store Price Synchronization Score
+2026-03-12 22:00:48 | analysis             | INFO     |     Store correlation:
+store_key  alfatah   daraz  jalalsons   metro  naheed
+store_key                                            
+alfatah     1.0000  0.4912     0.5972  0.9838  0.7218
+daraz       0.4912  1.0000     0.6286 -0.0760  0.5818
+jalalsons   0.5972  0.6286     1.0000  0.3720  0.7587
+metro       0.9838 -0.0760     0.3720  1.0000  0.6478
+naheed      0.7218  0.5818     0.7587  0.6478  1.0000
+2026-03-12 22:00:48 | analysis             | INFO     |     SYNCHRONIZATION SCORE = 0.5707
+2026-03-12 22:00:48 | analysis             | INFO     |     (1.0 = perfectly synchronized, 0.0 = no correlation)
+2026-03-12 22:00:48 | analysis             | INFO     |     alfatah <-> daraz: r = 0.4912
+2026-03-12 22:00:48 | analysis             | INFO     |     alfatah <-> jalalsons: r = 0.5972
+2026-03-12 22:00:48 | analysis             | INFO     |     alfatah <-> metro: r = 0.9838
+2026-03-12 22:00:48 | analysis             | INFO     |     alfatah <-> naheed: r = 0.7218
+2026-03-12 22:00:48 | analysis             | INFO     |     daraz <-> jalalsons: r = 0.6286
+2026-03-12 22:00:48 | analysis             | INFO     |     daraz <-> metro: r = -0.0760
+2026-03-12 22:00:48 | analysis             | INFO     |     daraz <-> naheed: r = 0.5818
+2026-03-12 22:00:48 | analysis             | INFO     |     jalalsons <-> metro: r = 0.3720
+2026-03-12 22:00:48 | analysis             | INFO     |     jalalsons <-> naheed: r = 0.7587
+2026-03-12 22:00:48 | analysis             | INFO     |     metro <-> naheed: r = 0.6478
+2026-03-12 22:00:49 | analysis             | INFO     | 
+  Top price differences...
+2026-03-12 22:00:49 | analysis             | INFO     |   Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\top_price_differences.xlsx
+2026-03-12 22:00:49 | analysis             | INFO     |     Coca Cola                                | Range=Rs.99799 | CV=93.2% | Spread=500.00x
+2026-03-12 22:00:49 | analysis             | INFO     |     TASTE OF THE WILD DOG FOOD FOWL GRAIN FR | Range=Rs.23601 | CV=78.0% | Spread=11.27x
+2026-03-12 22:00:49 | analysis             | INFO     |     Red Bull Energy Drink, Sugar Free, 250 m | Range=Rs.19499 | CV=85.9% | Spread=40.00x
+2026-03-12 22:00:49 | analysis             | INFO     |     FILIPPO BERIO EXTRA VIRGIN OLIVE OIL 5 L | Range=Rs.18400 | CV=78.7% | Spread=6.93x
+2026-03-12 22:00:49 | analysis             | INFO     |     Guard Easy Cook Sella Rice 1Kg(1 kg)     | Range=Rs.12400 | CV=87.4% | Spread=25.85x
+2026-03-12 22:00:49 | analysis             | INFO     |     GROOVE DOG FOOD CHICKEN ADULT 1.2KG      | Range=Rs.11054 | CV=98.9% | Spread=12.70x
+2026-03-12 22:00:49 | analysis             | INFO     |     GROOVE DOG FOOD BEEF ADULT 1.2KG         | Range=Rs.11054 | CV=125.5% | Spread=12.70x
+2026-03-12 22:00:49 | analysis             | INFO     |     Nutella Chocolate Spread                 | Range=Rs.9197 | CV=67.8% | Spread=4.22x
+2026-03-12 22:00:49 | analysis             | INFO     |     BLACK N DECKER SANDWICH MAKER 2 SLICE TS | Range=Rs.7656 | CV=42.5% | Spread=2.46x
+2026-03-12 22:00:49 | analysis             | INFO     |     PANASONIC STEAM IRON NI-U450             | Range=Rs.7510 | CV=25.6% | Spread=1.83x
+2026-03-12 22:00:49 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:00:49 | analysis             | INFO     | ANALYSIS COMPLETE — All sections 3.1-3.4 computed
+2026-03-12 22:00:49 | analysis             | INFO     |   Results: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results
+2026-03-12 22:00:49 | analysis             | INFO     |   Charts:  C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\charts
+2026-03-12 22:00:49 | analysis             | INFO     | ============================================================
+2026-03-12 22:00:49 | final_pipeline       | INFO     | Price Analysis DONE
+2026-03-12 22:00:49 | final_pipeline       | INFO     | 
+[STEP 6] Running validation...
+2026-03-12 22:00:49 | validation           | INFO     | ============================================================
+2026-03-12 22:00:49 | validation           | INFO     |   DATA VALIDATION REPORT
+2026-03-12 22:00:49 | validation           | INFO     | ============================================================
+2026-03-12 22:00:49 | validation           | INFO     | 
+2026-03-12 22:00:49 | validation           | INFO     | ==================================================
+2026-03-12 22:00:49 | validation           | INFO     |   ROW COUNTS
+2026-03-12 22:00:49 | validation           | INFO     | ==================================================
+2026-03-12 22:00:49 | validation           | INFO     |   Raw                 :    239,744 rows
+2026-03-12 22:00:50 | validation           | INFO     |   Processed           :    237,285 rows
+2026-03-12 22:00:50 | validation           | INFO     |   Matched (all)       :    237,285 rows
+2026-03-12 22:00:50 | validation           | INFO     |   Matched (only)      :      7,014 rows
+2026-03-12 22:00:50 | validation           | WARNING  |   ✗ Raw rows (239,744) < target (500,000)
+2026-03-12 22:00:50 | validation           | INFO     | 
+2026-03-12 22:00:50 | validation           | INFO     | ==================================================
+2026-03-12 22:00:50 | validation           | INFO     |   MISSING VALUES
+2026-03-12 22:00:50 | validation           | INFO     | ==================================================
+2026-03-12 22:00:51 | validation           | INFO     |   product_name             :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   price                    :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   store_key                :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   city                     :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   category                 :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   brand                    :        0 missing (  0.0%) [OK]
+2026-03-12 22:00:51 | validation           | INFO     |   quantity                 :  121,007 missing ( 51.0%) [BAD]
+2026-03-12 22:00:51 | validation           | INFO     |   unit                     :  121,007 missing ( 51.0%) [BAD]
+2026-03-12 22:00:51 | validation           | INFO     | 
+2026-03-12 22:00:51 | validation           | INFO     | ==================================================
+2026-03-12 22:00:51 | validation           | INFO     |   DUPLICATE CHECK
+2026-03-12 22:00:51 | validation           | INFO     | ==================================================
+2026-03-12 22:00:52 | validation           | INFO     |   Exact duplicate rows:    0
+2026-03-12 22:00:52 | validation           | INFO     |   Near duplicates (name+price): 177,867
+2026-03-12 22:00:52 | validation           | INFO     |   alfatah   : 24,503 unique names / 123,455 total rows
+2026-03-12 22:00:52 | validation           | INFO     |   daraz     : 20,745 unique names / 68,949 total rows
+2026-03-12 22:00:52 | validation           | INFO     |   jalalsons : 2,064 unique names / 6,201 total rows
+2026-03-12 22:00:52 | validation           | INFO     |   metro     : 4,487 unique names / 18,040 total rows
+2026-03-12 22:00:52 | validation           | INFO     |   naheed    : 5,163 unique names / 20,640 total rows
+2026-03-12 22:00:52 | validation           | INFO     | 
+2026-03-12 22:00:52 | validation           | INFO     | ==================================================
+2026-03-12 22:00:52 | validation           | INFO     |   PRICE SANITY CHECK
+2026-03-12 22:00:52 | validation           | INFO     | ==================================================
+2026-03-12 22:00:53 | validation           | INFO     |   Min price:    Rs. 1
+2026-03-12 22:00:53 | validation           | INFO     |   Max price:    Rs. 99999
+2026-03-12 22:00:53 | validation           | INFO     |   Mean price:   Rs. 5184
+2026-03-12 22:00:53 | validation           | INFO     |   Median price: Rs. 1245
+2026-03-12 22:00:53 | validation           | INFO     |   Prices <= 0:    0
+2026-03-12 22:00:53 | validation           | INFO     |   Prices > 50k:   4,173
+2026-03-12 22:00:53 | validation           | INFO     | 
+  Price stats by store:
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah   : mean Rs.8020, median Rs.2595, range Rs.1-99900
+2026-03-12 22:00:53 | validation           | INFO     |     daraz     : mean Rs.1347, median Rs.757, range Rs.1-55555
+2026-03-12 22:00:53 | validation           | INFO     |     jalalsons : mean Rs.703, median Rs.498, range Rs.10-9294
+2026-03-12 22:00:53 | validation           | INFO     |     metro     : mean Rs.6823, median Rs.800, range Rs.6-99999
+2026-03-12 22:00:53 | validation           | INFO     |     naheed    : mean Rs.960, median Rs.525, range Rs.10-51000
+2026-03-12 22:00:53 | validation           | INFO     | 
+2026-03-12 22:00:53 | validation           | INFO     | ==================================================
+2026-03-12 22:00:53 | validation           | INFO     |   COVERAGE CHECK
+2026-03-12 22:00:53 | validation           | INFO     | ==================================================
+2026-03-12 22:00:53 | validation           | INFO     |   Total stores: 5
+2026-03-12 22:00:53 | validation           | INFO     |   Total cities: 6
+2026-03-12 22:00:53 | validation           | INFO     |   Total categories: 229
+2026-03-12 22:00:53 | validation           | INFO     | 
+  Rows by store-city:
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah    / faisalabad     :   24,691 rows
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah    / islamabad      :   24,691 rows
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah    / karachi        :   24,691 rows
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah    / lahore         :   24,691 rows
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah    / rawalpindi     :   24,691 rows
+2026-03-12 22:00:53 | validation           | INFO     |     daraz      / islamabad      :   22,983 rows
+2026-03-12 22:00:53 | validation           | INFO     |     daraz      / karachi        :   22,983 rows
+2026-03-12 22:00:53 | validation           | INFO     |     daraz      / lahore         :   22,983 rows
+2026-03-12 22:00:53 | validation           | INFO     |     jalalsons  / islamabad      :    2,067 rows
+2026-03-12 22:00:53 | validation           | INFO     |     jalalsons  / karachi        :    2,067 rows
+2026-03-12 22:00:53 | validation           | INFO     |     jalalsons  / lahore         :    2,067 rows
+2026-03-12 22:00:53 | validation           | INFO     |     metro      / faisalabad     :    4,510 rows
+2026-03-12 22:00:53 | validation           | INFO     |     metro      / islamabad      :    4,510 rows
+2026-03-12 22:00:53 | validation           | INFO     |     metro      / karachi        :    4,510 rows
+2026-03-12 22:00:53 | validation           | INFO     |     metro      / lahore         :    4,510 rows
+2026-03-12 22:00:53 | validation           | INFO     |     naheed     / hyderabad      :    5,161 rows
+2026-03-12 22:00:53 | validation           | INFO     |     naheed     / islamabad      :    5,161 rows
+2026-03-12 22:00:53 | validation           | INFO     |     naheed     / karachi        :    5,161 rows
+2026-03-12 22:00:53 | validation           | INFO     |     naheed     / lahore         :    5,157 rows
+2026-03-12 22:00:53 | validation           | INFO     | 
+2026-03-12 22:00:53 | validation           | INFO     | ==================================================
+2026-03-12 22:00:53 | validation           | INFO     |   MATCHING QUALITY
+2026-03-12 22:00:53 | validation           | INFO     | ==================================================
+2026-03-12 22:00:53 | validation           | INFO     |   Total match groups:      681
+2026-03-12 22:00:53 | validation           | WARNING  |   ✗ Match groups (681) < target (7,000)
+2026-03-12 22:00:53 | validation           | INFO     |   Groups in 2 stores: 638
+2026-03-12 22:00:53 | validation           | INFO     |   Groups in 3 stores: 41
+2026-03-12 22:00:53 | validation           | INFO     |   Groups in 4 stores: 2
+2026-03-12 22:00:53 | validation           | INFO     | 
+  Matched rows by store:
+2026-03-12 22:00:53 | validation           | INFO     |     alfatah   : 1,250 rows
+2026-03-12 22:00:53 | validation           | INFO     |     daraz     : 1,668 rows
+2026-03-12 22:00:54 | validation           | INFO     |     jalalsons : 828 rows
+2026-03-12 22:00:54 | validation           | INFO     |     metro     : 1,152 rows
+2026-03-12 22:00:54 | validation           | INFO     |     naheed    : 2,116 rows
+2026-03-12 22:00:54 | validation           | INFO     | 
+============================================================
+2026-03-12 22:00:54 | validation           | INFO     |   VALIDATION COMPLETE
+2026-03-12 22:00:54 | validation           | INFO     | ============================================================
+2026-03-12 22:00:54 | final_pipeline       | INFO     | Validation DONE
+2026-03-12 22:00:54 | final_pipeline       | INFO     | 
+============================================================
+2026-03-12 22:00:54 | final_pipeline       | INFO     | PIPELINE COMPLETE
+2026-03-12 22:00:54 | final_pipeline       | INFO     | ============================================================
+2026-03-12 22:00:55 | final_pipeline       | INFO     | ============================================================
+2026-03-12 22:00:55 | final_pipeline       | INFO     | FINAL PIPELINE — Merge + Fill + Clean + Match + Analyze
+2026-03-12 22:00:55 | final_pipeline       | INFO     | Time: 2026-03-12T22:00:55.551706
+2026-03-12 22:00:55 | final_pipeline       | INFO     | ============================================================
+2026-03-12 22:00:55 | final_pipeline       | INFO     | 
+[STEP 1] Gathering real scraped data...
+2026-03-12 22:00:55 | final_pipeline       | INFO     |   raw_alfatah_faisalabad.parquet: 24,996 rows
+2026-03-12 22:00:55 | final_pipeline       | INFO     |   raw_alfatah_islamabad.parquet: 24,996 rows
+2026-03-12 22:00:55 | final_pipeline       | INFO     |   raw_alfatah_karachi.parquet: 24,996 rows
+2026-03-12 22:00:55 | final_pipeline       | INFO     |   raw_alfatah_lahore.parquet: 24,996 rows
+2026-03-12 22:00:55 | final_pipeline       | INFO     |   raw_alfatah_rawalpindi.parquet: 24,996 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_daraz_islamabad.parquet: 26,343 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_daraz_karachi.parquet: 26,343 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_daraz_lahore.parquet: 26,343 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_jalalsons_islamabad.parquet: 2,074 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_jalalsons_karachi.parquet: 2,074 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_jalalsons_lahore.parquet: 2,074 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_metro_faisalabad.parquet: 4,824 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_metro_islamabad.parquet: 4,824 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_metro_karachi.parquet: 4,824 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_metro_lahore.parquet: 4,824 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_naheed_hyderabad.parquet: 5,283 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_naheed_islamabad.parquet: 5,283 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_naheed_karachi.parquet: 5,283 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   raw_naheed_lahore.parquet: 5,279 rows
+2026-03-12 22:00:56 | final_pipeline       | INFO     | Total real scraped rows: 239,744
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   alfatah: 124,695 rows across 5 cities
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   daraz: 68,952 rows across 3 cities
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   jalalsons: 6,201 rows across 3 cities
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   metro: 19,256 rows across 4 cities
+2026-03-12 22:00:56 | final_pipeline       | INFO     |   naheed: 20,640 rows across 4 cities
+2026-03-12 22:00:56 | final_pipeline       | INFO     | 
+[STEP 2] Saving combined raw data...
+2026-03-12 22:00:57 | final_pipeline       | INFO     | Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\raw\all_raw_data.parquet (239,744 rows)
+2026-03-12 22:00:57 | final_pipeline       | INFO     | 
+Raw data summary:
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   alfatah: 124,695 total, 124,695 with product_url
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   daraz: 68,952 total, 68,952 with product_url
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   jalalsons: 6,201 total, 6,201 with product_url
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   metro: 19,256 total, 19,256 with product_url
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   naheed: 20,640 total, 20,640 with product_url
+2026-03-12 22:00:58 | final_pipeline       | INFO     |   TOTAL: 239,744 rows
+2026-03-12 22:00:58 | final_pipeline       | INFO     | 
+[STEP 3] Running clean_and_normalize...
+2026-03-12 22:00:58 | processing           | INFO     | ============================================================
+2026-03-12 22:00:58 | processing           | INFO     | STARTING DATA PROCESSING PIPELINE
+2026-03-12 22:00:58 | processing           | INFO     | ============================================================
+2026-03-12 22:00:58 | processing           | INFO     | Loaded raw data: 239744 rows
+2026-03-12 22:00:58 | processing           | INFO     | Removed 0 duplicates (239744 -> 239744)
+2026-03-12 22:00:58 | processing           | INFO     | Cleaning product names...
+2026-03-12 22:01:02 | processing           | INFO     |   Dropped 0 rows with empty names
+2026-03-12 22:01:02 | processing           | INFO     | Cleaning prices...
+2026-03-12 22:01:02 | processing           | INFO     |   Dropped 0 rows with invalid price
+2026-03-12 22:01:03 | processing           | INFO     |   Dropped 2459 rows with price > 100k
+2026-03-12 22:01:03 | processing           | INFO     | Extracting brands...
+2026-03-12 22:01:08 | processing           | INFO     |   Top brands:
+brand
+Boys      5495
+Girls     4680
+Baby      2706
+Glass     2559
+Table     1995
+Pack      1992
+Mk        1950
+Mug       1695
+Ladies    1565
+Al        1557
+Name: count, dtype: int64
+2026-03-12 22:01:08 | processing           | INFO     | Extracting quantity and unit...
+2026-03-12 22:01:34 | processing           | INFO     |   Found quantity+unit in 116278/237285 rows (49.0%)
+2026-03-12 22:01:34 | processing           | INFO     | Normalizing units and computing price per unit...
+2026-03-12 22:01:49 | processing           | INFO     |   Computed price_per_unit for 116263/237285 rows
+2026-03-12 22:01:50 | processing           | INFO     | Saved processed data: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\processed\all_processed_data.parquet (237285 rows)
+2026-03-12 22:01:50 | processing           | INFO     |   Saved: processed_alfatah.parquet (123455 rows)
+2026-03-12 22:01:50 | processing           | INFO     |   Saved: processed_daraz.parquet (68949 rows)
+2026-03-12 22:01:51 | processing           | INFO     |   Saved: processed_jalalsons.parquet (6201 rows)
+2026-03-12 22:01:51 | processing           | INFO     |   Saved: processed_metro.parquet (18040 rows)
+2026-03-12 22:01:51 | processing           | INFO     |   Saved: processed_naheed.parquet (20640 rows)
+2026-03-12 22:01:51 | processing           | INFO     | 
+============================================================
+2026-03-12 22:01:51 | processing           | INFO     | PROCESSING COMPLETE — 237285 clean rows
+2026-03-12 22:01:51 | processing           | INFO     | ============================================================
+2026-03-12 22:01:51 | final_pipeline       | INFO     | Clean & Normalize DONE
+2026-03-12 22:01:51 | final_pipeline       | INFO     | 
+[STEP 4] Running product_matching...
+2026-03-12 22:01:51 | matching             | INFO     | ============================================================
+2026-03-12 22:01:51 | matching             | INFO     | STARTING PRODUCT MATCHING PIPELINE
+2026-03-12 22:01:51 | matching             | INFO     | ============================================================
+2026-03-12 22:01:51 | matching             | INFO     | Loaded 237285 processed rows
+2026-03-12 22:01:51 | matching             | INFO     | Building match keys...
+2026-03-12 22:02:16 | matching             | INFO     |   237240/237285 rows got a full match key
+2026-03-12 22:02:16 | matching             | INFO     |   237024/237285 rows got a name-only key
+2026-03-12 22:02:16 | matching             | INFO     | Pass 1: Full key matching (brand + words + size)...
+2026-03-12 22:02:33 | matching             | INFO     |   Pass 1 groups: 321
+2026-03-12 22:02:33 | matching             | INFO     | Pass 2: Name-only key matching (ignoring size)...
+2026-03-12 22:02:49 | matching             | INFO     |   Pass 2 groups: 194
+2026-03-12 22:02:49 | matching             | INFO     | Pass 3: Short key matching (brand + first 2 product words)...
+2026-03-12 22:03:01 | matching             | INFO     |   Pass 3 groups: 166
+2026-03-12 22:03:02 | matching             | INFO     |   Total deterministic groups: 681
+2026-03-12 22:03:02 | matching             | INFO     |   Total matched rows:         7014
+2026-03-12 22:03:02 | matching             | INFO     | After deterministic: 681 groups
+2026-03-12 22:03:02 | matching             | INFO     | Already have 7014 matched rows (target 7000), skipping fuzzy
+2026-03-12 22:03:03 | matching             | INFO     | Saved all data with match info: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\all_with_matches.parquet
+2026-03-12 22:03:03 | matching             | INFO     | Saved matched products: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\matched_products.parquet (7014 rows)
+2026-03-12 22:03:03 | matching             | INFO     | Saved match summary: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\data\matched\match_summary.parquet (681 groups)
+2026-03-12 22:03:03 | matching             | INFO     | 
+============================================================
+2026-03-12 22:03:03 | matching             | INFO     | MATCHING COMPLETE
+2026-03-12 22:03:03 | matching             | INFO     |   Total match groups:  681
+2026-03-12 22:03:03 | matching             | INFO     |   Total matched rows:  7014
+2026-03-12 22:03:03 | matching             | INFO     |   Target was:          7000
+2026-03-12 22:03:03 | matching             | INFO     | ============================================================
+2026-03-12 22:03:03 | final_pipeline       | INFO     | Product Matching DONE
+2026-03-12 22:03:03 | final_pipeline       | INFO     | 
+[STEP 5] Running price_analysis...
+2026-03-12 22:03:05 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:05 | analysis             | INFO     | STARTING COMPREHENSIVE PRICE ANALYSIS
+2026-03-12 22:03:05 | analysis             | INFO     |   Sections: 3.1, 3.2, 3.3, 3.4
+2026-03-12 22:03:05 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:06 | analysis             | INFO     | Loaded 7014 matched rows
+2026-03-12 22:03:06 | analysis             | INFO     | Loaded 237285 total processed rows
+2026-03-12 22:03:06 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:06 | analysis             | INFO     | 3.1  PRICE DISPERSION METRICS
+2026-03-12 22:03:06 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:07 | analysis             | INFO     | Saved price dispersion: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\price_dispersion.xlsx (681 groups)
+2026-03-12 22:03:07 | analysis             | INFO     | 
+  === PRICE DISPERSION SUMMARY ===
+2026-03-12 22:03:07 | analysis             | INFO     |   Total matched groups:        681
+2026-03-12 22:03:07 | analysis             | INFO     |   Mean CV:                     27.54%
+2026-03-12 22:03:07 | analysis             | INFO     |   Median CV:                   16.56%
+2026-03-12 22:03:07 | analysis             | INFO     |   Mean Price Range:            Rs. 845
+2026-03-12 22:03:07 | analysis             | INFO     |   Max Price Range:             Rs. 99799
+2026-03-12 22:03:07 | analysis             | INFO     |   Mean IQR:                    Rs. 695
+2026-03-12 22:03:07 | analysis             | INFO     |   Mean Price Spread Ratio:     7.454
+2026-03-12 22:03:07 | analysis             | INFO     |   Groups with CV > 10%:        420
+2026-03-12 22:03:07 | analysis             | INFO     |   Groups with CV > 20%:        308
+2026-03-12 22:03:07 | analysis             | INFO     | 
+  Computing Relative Price Position Index (RPPI) per store...
+2026-03-12 22:03:07 | analysis             | INFO     |   Saved RPPI: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\relative_price_position_index.xlsx
+2026-03-12 22:03:07 | analysis             | INFO     |     alfatah     : RPPI mean=1.2220, median=0.6095
+2026-03-12 22:03:07 | analysis             | INFO     |     daraz       : RPPI mean=1.0000, median=0.6171
+2026-03-12 22:03:07 | analysis             | INFO     |     jalalsons   : RPPI mean=0.6648, median=0.5017
+2026-03-12 22:03:07 | analysis             | INFO     |     metro       : RPPI mean=1.0110, median=0.8844
+2026-03-12 22:03:07 | analysis             | INFO     |     naheed      : RPPI mean=0.9940, median=0.7824
+2026-03-12 22:03:07 | analysis             | INFO     |   Charts saved: cv_distribution.png, price_spread_ratio_dist.png
+2026-03-12 22:03:07 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:03:07 | analysis             | INFO     | 3.2  STORE-LEVEL AGGREGATED METRICS
+2026-03-12 22:03:07 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:07 | analysis             | INFO     | Saved store-level metrics: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\store_level_metrics.xlsx
+2026-03-12 22:03:07 | analysis             | INFO     |   alfatah      / faisalabad  : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:03:07 | analysis             | INFO     |   alfatah      / islamabad   : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:03:07 | analysis             | INFO     |   alfatah      / karachi     : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:03:07 | analysis             | INFO     |   alfatah      / lahore      : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:03:07 | analysis             | INFO     |   alfatah      / rawalpindi  : PriceIdx=1.041, Dev=Rs.-239, Vol=33.4%, Lead=61.2%
+2026-03-12 22:03:07 | analysis             | INFO     |   daraz        / islamabad   : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:03:07 | analysis             | INFO     |   daraz        / karachi     : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:03:07 | analysis             | INFO     |   daraz        / lahore      : PriceIdx=1.000, Dev=Rs.-620, Vol=31.6%, Lead=36.7%
+2026-03-12 22:03:07 | analysis             | INFO     |   jalalsons    / islamabad   : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   jalalsons    / karachi     : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   jalalsons    / lahore      : PriceIdx=0.665, Dev=Rs.-473, Vol=24.7%, Lead=58.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   metro        / faisalabad  : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   metro        / islamabad   : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   metro        / karachi     : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   metro        / lahore      : PriceIdx=1.010, Dev=Rs.-41, Vol=26.4%, Lead=56.8%
+2026-03-12 22:03:07 | analysis             | INFO     |   naheed       / hyderabad   : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:03:07 | analysis             | INFO     |   naheed       / islamabad   : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:03:07 | analysis             | INFO     |   naheed       / karachi     : PriceIdx=0.976, Dev=Rs.-123, Vol=24.8%, Lead=42.9%
+2026-03-12 22:03:07 | analysis             | INFO     |   naheed       / lahore      : PriceIdx=0.991, Dev=Rs.-118, Vol=24.8%, Lead=42.9%
+2026-03-12 22:03:09 | analysis             | INFO     |   Charts saved: store_avg_price, city_avg_price, category_cv, store_city_price_index_heatmap
+2026-03-12 22:03:09 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:03:09 | analysis             | INFO     | 3.3  LEADER DOMINANCE INDEX (LDI)
+2026-03-12 22:03:09 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:09 | analysis             | INFO     | 
+  === BASIC LDI ===
+2026-03-12 22:03:09 | analysis             | INFO     |   Formula: LDI_store = (products where store has lowest price) / (total matched products)
+2026-03-12 22:03:09 | analysis             | INFO     |   Total matched product groups: 681
+2026-03-12 22:03:09 | analysis             | INFO     |     naheed      : LDI = 0.2731 (cheapest in 186 / 681)
+2026-03-12 22:03:09 | analysis             | INFO     |     jalalsons   : LDI = 0.1909 (cheapest in 130 / 681)
+2026-03-12 22:03:09 | analysis             | INFO     |     daraz       : LDI = 0.1880 (cheapest in 128 / 681)
+2026-03-12 22:03:09 | analysis             | INFO     |     metro       : LDI = 0.1836 (cheapest in 125 / 681)
+2026-03-12 22:03:09 | analysis             | INFO     |     alfatah     : LDI = 0.1645 (cheapest in 112 / 681)
+2026-03-12 22:03:09 | analysis             | INFO     | 
+  Computing Weighted LDI (weighted by category size)...
+2026-03-12 22:03:09 | analysis             | INFO     |   Weighted LDI:
+2026-03-12 22:03:09 | analysis             | INFO     |     naheed      : Weighted LDI = 0.2731
+2026-03-12 22:03:09 | analysis             | INFO     |     jalalsons   : Weighted LDI = 0.1909
+2026-03-12 22:03:09 | analysis             | INFO     |     daraz       : Weighted LDI = 0.1880
+2026-03-12 22:03:09 | analysis             | INFO     |     metro       : Weighted LDI = 0.1836
+2026-03-12 22:03:09 | analysis             | INFO     |     alfatah     : Weighted LDI = 0.1645
+2026-03-12 22:03:09 | analysis             | INFO     | 
+  Computing Category-wise LDI...
+2026-03-12 22:03:09 | analysis             | INFO     |   Saved LDI: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\leader_dominance_index.xlsx
+2026-03-12 22:03:13 | analysis             | INFO     |   Charts: ldi_comparison, price_leadership_pie, category_ldi_heatmap
+2026-03-12 22:03:13 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:03:13 | analysis             | INFO     | 3.4  CORRELATION & COMPETITION ANALYSIS
+2026-03-12 22:03:13 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:13 | analysis             | INFO     | 
+  1) Correlation: Product Size vs Price Dispersion
+2026-03-12 22:03:13 | analysis             | INFO     |     Pearson r  = 0.0997 (p=1.0883e-02)
+2026-03-12 22:03:13 | analysis             | INFO     |     Spearman r = 0.0587 (p=1.3414e-01)
+2026-03-12 22:03:13 | analysis             | INFO     |     -> No significant correlation between size and dispersion
+2026-03-12 22:03:13 | analysis             | INFO     | 
+  2) Correlation: Number of Competitors vs Price Spread
+2026-03-12 22:03:13 | analysis             | INFO     |     Pearson r  = -0.0132 (p=7.3122e-01)
+2026-03-12 22:03:13 | analysis             | INFO     |     Spearman r = 0.0409 (p=2.8708e-01)
+2026-03-12 22:03:13 | analysis             | INFO     |     -> No significant correlation
+2026-03-12 22:03:13 | analysis             | INFO     | 
+  3) Correlation: Brand Tier vs Price Volatility
+2026-03-12 22:03:13 | analysis             | INFO     |     Pearson r  = 0.0356 (p=3.5372e-01)
+2026-03-12 22:03:13 | analysis             | INFO     |     Spearman r = 0.0791 (p=3.9058e-02)
+2026-03-12 22:03:13 | analysis             | INFO     |     Tier stats:
+             mean  median    std
+brand_tier                      
+economy     25.46   13.49  28.13
+mid-range   29.92   15.85  31.99
+premium     27.66   20.54  25.43
+2026-03-12 22:03:13 | analysis             | INFO     | 
+  4) City-wise Price Correlation Matrix
+2026-03-12 22:03:13 | analysis             | INFO     |     Pearson:
+city        faisalabad  hyderabad  islamabad  karachi  lahore  rawalpindi
+city                                                                     
+faisalabad      1.0000     0.7053     0.9314   0.9314  0.9314      0.9974
+hyderabad       0.7053     1.0000     0.8273   0.8273  0.8272      0.7218
+islamabad       0.9314     0.8273     1.0000   1.0000  1.0000      0.9311
+karachi         0.9314     0.8273     1.0000   1.0000  1.0000      0.9311
+lahore          0.9314     0.8272     1.0000   1.0000  1.0000      0.9311
+rawalpindi      0.9974     0.7218     0.9311   0.9311  0.9311      1.0000
+2026-03-12 22:03:13 | analysis             | INFO     |     Spearman:
+city        faisalabad  hyderabad  islamabad  karachi  lahore  rawalpindi
+city                                                                     
+faisalabad      1.0000     0.8364     0.9436   0.9436  0.9436      0.9748
+hyderabad       0.8364     1.0000     0.9037   0.9037  0.9037      0.8472
+islamabad       0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+karachi         0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+lahore          0.9436     0.9037     1.0000   1.0000  1.0000      0.9103
+rawalpindi      0.9748     0.8472     0.9103   0.9103  0.9103      1.0000
+2026-03-12 22:03:14 | analysis             | INFO     | 
+  5) Cross-Store Price Synchronization Score
+2026-03-12 22:03:14 | analysis             | INFO     |     Store correlation:
+store_key  alfatah   daraz  jalalsons   metro  naheed
+store_key                                            
+alfatah     1.0000  0.4912     0.5972  0.9838  0.7218
+daraz       0.4912  1.0000     0.6286 -0.0760  0.5818
+jalalsons   0.5972  0.6286     1.0000  0.3720  0.7587
+metro       0.9838 -0.0760     0.3720  1.0000  0.6478
+naheed      0.7218  0.5818     0.7587  0.6478  1.0000
+2026-03-12 22:03:14 | analysis             | INFO     |     SYNCHRONIZATION SCORE = 0.5707
+2026-03-12 22:03:14 | analysis             | INFO     |     (1.0 = perfectly synchronized, 0.0 = no correlation)
+2026-03-12 22:03:14 | analysis             | INFO     |     alfatah <-> daraz: r = 0.4912
+2026-03-12 22:03:14 | analysis             | INFO     |     alfatah <-> jalalsons: r = 0.5972
+2026-03-12 22:03:14 | analysis             | INFO     |     alfatah <-> metro: r = 0.9838
+2026-03-12 22:03:14 | analysis             | INFO     |     alfatah <-> naheed: r = 0.7218
+2026-03-12 22:03:14 | analysis             | INFO     |     daraz <-> jalalsons: r = 0.6286
+2026-03-12 22:03:14 | analysis             | INFO     |     daraz <-> metro: r = -0.0760
+2026-03-12 22:03:14 | analysis             | INFO     |     daraz <-> naheed: r = 0.5818
+2026-03-12 22:03:14 | analysis             | INFO     |     jalalsons <-> metro: r = 0.3720
+2026-03-12 22:03:14 | analysis             | INFO     |     jalalsons <-> naheed: r = 0.7587
+2026-03-12 22:03:14 | analysis             | INFO     |     metro <-> naheed: r = 0.6478
+2026-03-12 22:03:15 | analysis             | INFO     | 
+  Top price differences...
+2026-03-12 22:03:15 | analysis             | INFO     |   Saved: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results\top_price_differences.xlsx
+2026-03-12 22:03:15 | analysis             | INFO     |     Coca Cola                                | Range=Rs.99799 | CV=93.2% | Spread=500.00x
+2026-03-12 22:03:15 | analysis             | INFO     |     TASTE OF THE WILD DOG FOOD FOWL GRAIN FR | Range=Rs.23601 | CV=78.0% | Spread=11.27x
+2026-03-12 22:03:15 | analysis             | INFO     |     Red Bull Energy Drink, Sugar Free, 250 m | Range=Rs.19499 | CV=85.9% | Spread=40.00x
+2026-03-12 22:03:15 | analysis             | INFO     |     FILIPPO BERIO EXTRA VIRGIN OLIVE OIL 5 L | Range=Rs.18400 | CV=78.7% | Spread=6.93x
+2026-03-12 22:03:15 | analysis             | INFO     |     Guard Easy Cook Sella Rice 1Kg(1 kg)     | Range=Rs.12400 | CV=87.4% | Spread=25.85x
+2026-03-12 22:03:15 | analysis             | INFO     |     GROOVE DOG FOOD CHICKEN ADULT 1.2KG      | Range=Rs.11054 | CV=98.9% | Spread=12.70x
+2026-03-12 22:03:15 | analysis             | INFO     |     GROOVE DOG FOOD BEEF ADULT 1.2KG         | Range=Rs.11054 | CV=125.5% | Spread=12.70x
+2026-03-12 22:03:15 | analysis             | INFO     |     Nutella Chocolate Spread                 | Range=Rs.9197 | CV=67.8% | Spread=4.22x
+2026-03-12 22:03:15 | analysis             | INFO     |     BLACK N DECKER SANDWICH MAKER 2 SLICE TS | Range=Rs.7656 | CV=42.5% | Spread=2.46x
+2026-03-12 22:03:15 | analysis             | INFO     |     PANASONIC STEAM IRON NI-U450             | Range=Rs.7510 | CV=25.6% | Spread=1.83x
+2026-03-12 22:03:15 | analysis             | INFO     | 
+============================================================
+2026-03-12 22:03:15 | analysis             | INFO     | ANALYSIS COMPLETE — All sections 3.1-3.4 computed
+2026-03-12 22:03:15 | analysis             | INFO     |   Results: C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\results
+2026-03-12 22:03:15 | analysis             | INFO     |   Charts:  C:\Users\BUTT PC\Desktop\DATA SCIENCE\supermarket_pipeline\analysis\charts
+2026-03-12 22:03:15 | analysis             | INFO     | ============================================================
+2026-03-12 22:03:15 | final_pipeline       | INFO     | Price Analysis DONE
+2026-03-12 22:03:15 | final_pipeline       | INFO     | 
+[STEP 6] Running validation...
+2026-03-12 22:03:15 | validation           | INFO     | ============================================================
+2026-03-12 22:03:15 | validation           | INFO     |   DATA VALIDATION REPORT
+2026-03-12 22:03:15 | validation           | INFO     | ============================================================
+2026-03-12 22:03:15 | validation           | INFO     | 
+2026-03-12 22:03:15 | validation           | INFO     | ==================================================
+2026-03-12 22:03:15 | validation           | INFO     |   ROW COUNTS
+2026-03-12 22:03:15 | validation           | INFO     | ==================================================
+2026-03-12 22:03:15 | validation           | INFO     |   Raw                 :    239,744 rows
+2026-03-12 22:03:15 | validation           | INFO     |   Processed           :    237,285 rows
+2026-03-12 22:03:16 | validation           | INFO     |   Matched (all)       :    237,285 rows
+2026-03-12 22:03:16 | validation           | INFO     |   Matched (only)      :      7,014 rows
+2026-03-12 22:03:16 | validation           | WARNING  |   ✗ Raw rows (239,744) < target (500,000)
+2026-03-12 22:03:16 | validation           | INFO     | 
+2026-03-12 22:03:16 | validation           | INFO     | ==================================================
+2026-03-12 22:03:16 | validation           | INFO     |   MISSING VALUES
+2026-03-12 22:03:16 | validation           | INFO     | ==================================================
+2026-03-12 22:03:16 | validation           | INFO     |   product_name             :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   price                    :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   store_key                :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   city                     :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   category                 :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   brand                    :        0 missing (  0.0%) [OK]
+2026-03-12 22:03:16 | validation           | INFO     |   quantity                 :  121,007 missing ( 51.0%) [BAD]
+2026-03-12 22:03:16 | validation           | INFO     |   unit                     :  121,007 missing ( 51.0%) [BAD]
+2026-03-12 22:03:16 | validation           | INFO     | 
+2026-03-12 22:03:16 | validation           | INFO     | ==================================================
+2026-03-12 22:03:16 | validation           | INFO     |   DUPLICATE CHECK
+2026-03-12 22:03:16 | validation           | INFO     | ==================================================
+2026-03-12 22:03:17 | validation           | INFO     |   Exact duplicate rows:    0
+2026-03-12 22:03:18 | validation           | INFO     |   Near duplicates (name+price): 177,867
+2026-03-12 22:03:18 | validation           | INFO     |   alfatah   : 24,503 unique names / 123,455 total rows
+2026-03-12 22:03:18 | validation           | INFO     |   daraz     : 20,745 unique names / 68,949 total rows
+2026-03-12 22:03:18 | validation           | INFO     |   jalalsons : 2,064 unique names / 6,201 total rows
+2026-03-12 22:03:18 | validation           | INFO     |   metro     : 4,487 unique names / 18,040 total rows
+2026-03-12 22:03:18 | validation           | INFO     |   naheed    : 5,163 unique names / 20,640 total rows
+2026-03-12 22:03:18 | validation           | INFO     | 
+2026-03-12 22:03:18 | validation           | INFO     | ==================================================
+2026-03-12 22:03:18 | validation           | INFO     |   PRICE SANITY CHECK
+2026-03-12 22:03:18 | validation           | INFO     | ==================================================
+2026-03-12 22:03:18 | validation           | INFO     |   Min price:    Rs. 1
+2026-03-12 22:03:18 | validation           | INFO     |   Max price:    Rs. 99999
+2026-03-12 22:03:18 | validation           | INFO     |   Mean price:   Rs. 5184
+2026-03-12 22:03:18 | validation           | INFO     |   Median price: Rs. 1245
+2026-03-12 22:03:18 | validation           | INFO     |   Prices <= 0:    0
+2026-03-12 22:03:18 | validation           | INFO     |   Prices > 50k:   4,173
+2026-03-12 22:03:18 | validation           | INFO     | 
+  Price stats by store:
+2026-03-12 22:03:18 | validation           | INFO     |     alfatah   : mean Rs.8020, median Rs.2595, range Rs.1-99900
+2026-03-12 22:03:18 | validation           | INFO     |     daraz     : mean Rs.1347, median Rs.757, range Rs.1-55555
+2026-03-12 22:03:18 | validation           | INFO     |     jalalsons : mean Rs.703, median Rs.498, range Rs.10-9294
+2026-03-12 22:03:18 | validation           | INFO     |     metro     : mean Rs.6823, median Rs.800, range Rs.6-99999
+2026-03-12 22:03:18 | validation           | INFO     |     naheed    : mean Rs.960, median Rs.525, range Rs.10-51000
+2026-03-12 22:03:18 | validation           | INFO     | 
+2026-03-12 22:03:18 | validation           | INFO     | ==================================================
+2026-03-12 22:03:18 | validation           | INFO     |   COVERAGE CHECK
+2026-03-12 22:03:18 | validation           | INFO     | ==================================================
+2026-03-12 22:03:19 | validation           | INFO     |   Total stores: 5
+2026-03-12 22:03:19 | validation           | INFO     |   Total cities: 6
+2026-03-12 22:03:19 | validation           | INFO     |   Total categories: 229
+2026-03-12 22:03:19 | validation           | INFO     | 
+  Rows by store-city:
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah    / faisalabad     :   24,691 rows
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah    / islamabad      :   24,691 rows
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah    / karachi        :   24,691 rows
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah    / lahore         :   24,691 rows
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah    / rawalpindi     :   24,691 rows
+2026-03-12 22:03:19 | validation           | INFO     |     daraz      / islamabad      :   22,983 rows
+2026-03-12 22:03:19 | validation           | INFO     |     daraz      / karachi        :   22,983 rows
+2026-03-12 22:03:19 | validation           | INFO     |     daraz      / lahore         :   22,983 rows
+2026-03-12 22:03:19 | validation           | INFO     |     jalalsons  / islamabad      :    2,067 rows
+2026-03-12 22:03:19 | validation           | INFO     |     jalalsons  / karachi        :    2,067 rows
+2026-03-12 22:03:19 | validation           | INFO     |     jalalsons  / lahore         :    2,067 rows
+2026-03-12 22:03:19 | validation           | INFO     |     metro      / faisalabad     :    4,510 rows
+2026-03-12 22:03:19 | validation           | INFO     |     metro      / islamabad      :    4,510 rows
+2026-03-12 22:03:19 | validation           | INFO     |     metro      / karachi        :    4,510 rows
+2026-03-12 22:03:19 | validation           | INFO     |     metro      / lahore         :    4,510 rows
+2026-03-12 22:03:19 | validation           | INFO     |     naheed     / hyderabad      :    5,161 rows
+2026-03-12 22:03:19 | validation           | INFO     |     naheed     / islamabad      :    5,161 rows
+2026-03-12 22:03:19 | validation           | INFO     |     naheed     / karachi        :    5,161 rows
+2026-03-12 22:03:19 | validation           | INFO     |     naheed     / lahore         :    5,157 rows
+2026-03-12 22:03:19 | validation           | INFO     | 
+2026-03-12 22:03:19 | validation           | INFO     | ==================================================
+2026-03-12 22:03:19 | validation           | INFO     |   MATCHING QUALITY
+2026-03-12 22:03:19 | validation           | INFO     | ==================================================
+2026-03-12 22:03:19 | validation           | INFO     |   Total match groups:      681
+2026-03-12 22:03:19 | validation           | WARNING  |   ✗ Match groups (681) < target (7,000)
+2026-03-12 22:03:19 | validation           | INFO     |   Groups in 2 stores: 638
+2026-03-12 22:03:19 | validation           | INFO     |   Groups in 3 stores: 41
+2026-03-12 22:03:19 | validation           | INFO     |   Groups in 4 stores: 2
+2026-03-12 22:03:19 | validation           | INFO     | 
+  Matched rows by store:
+2026-03-12 22:03:19 | validation           | INFO     |     alfatah   : 1,250 rows
+2026-03-12 22:03:19 | validation           | INFO     |     daraz     : 1,668 rows
+2026-03-12 22:03:19 | validation           | INFO     |     jalalsons : 828 rows
+2026-03-12 22:03:19 | validation           | INFO     |     metro     : 1,152 rows
+2026-03-12 22:03:19 | validation           | INFO     |     naheed    : 2,116 rows
+2026-03-12 22:03:19 | validation           | INFO     | 
+============================================================
+2026-03-12 22:03:19 | validation           | INFO     |   VALIDATION COMPLETE
+2026-03-12 22:03:19 | validation           | INFO     | ============================================================
+2026-03-12 22:03:19 | final_pipeline       | INFO     | Validation DONE
+2026-03-12 22:03:19 | final_pipeline       | INFO     | 
+============================================================
+2026-03-12 22:03:19 | final_pipeline       | INFO     | PIPELINE COMPLETE
+2026-03-12 22:03:19 | final_pipeline       | INFO     | ============================================================

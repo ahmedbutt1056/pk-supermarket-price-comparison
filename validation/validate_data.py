@@ -56,9 +56,9 @@ def check_row_counts():
     # check targets
     raw_count = counts.get("Raw", 0)
     if raw_count >= config.TARGET_RAW_ROWS:
-        log.info(f"  ✓ Raw rows ({raw_count:,}) >= target ({config.TARGET_RAW_ROWS:,})")
+        log.info(f"  [OK] Raw rows ({raw_count:,}) >= target ({config.TARGET_RAW_ROWS:,})")
     else:
-        log.warning(f"  ✗ Raw rows ({raw_count:,}) < target ({config.TARGET_RAW_ROWS:,})")
+        log.warning(f"  [WARN] Raw rows ({raw_count:,}) < target ({config.TARGET_RAW_ROWS:,})")
 
     return counts
 
@@ -181,9 +181,9 @@ def check_matching_quality():
     log.info(f"  Total match groups:      {total_groups:,}")
 
     if total_groups >= config.TARGET_MATCHED_PRODUCTS:
-        log.info(f"  ✓ Match groups ({total_groups:,}) >= target ({config.TARGET_MATCHED_PRODUCTS:,})")
+        log.info(f"  [OK] Match groups ({total_groups:,}) >= target ({config.TARGET_MATCHED_PRODUCTS:,})")
     else:
-        log.warning(f"  ✗ Match groups ({total_groups:,}) < target ({config.TARGET_MATCHED_PRODUCTS:,})")
+        log.warning(f"  [WARN] Match groups ({total_groups:,}) < target ({config.TARGET_MATCHED_PRODUCTS:,})")
 
     # how many groups span 2 stores vs 3 stores?
     if summary_path.exists():

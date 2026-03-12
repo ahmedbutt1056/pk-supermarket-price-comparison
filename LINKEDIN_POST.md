@@ -21,6 +21,6 @@ We built an automated system that scrapes real product data from 4 major Pakista
 Tech stack: Python | BeautifulSoup4 | Pandas | PyArrow | RapidFuzz | Streamlit | Matplotlib | Seaborn | SciPy
 
 📝 Full technical deep-dive on Medium: [LINK]
-💻 Source code on GitHub: [LINK]
+💻 Source code on GitHub: https://github.com/ahmedbutt1056/pk-supermarket-price-comparison
 
 #DataScience #WebScraping #Python #DataEngineering #PriceComparison #Pakistan #ETL #MachineLearning #Analytics

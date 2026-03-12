@@ -170,6 +170,31 @@ def deterministic_match(df):
     pass2_groups = match_group_id - pass1_groups
     log.info(f"  Pass 2 groups: {pass2_groups}")
 
+    # ---- PASS 3: short key (brand + first 2 words) ----
+    log.info("Pass 3: Short key matching (brand + first 2 product words)...")
+    pass2_total = match_group_id
+    sk_stores = defaultdict(set)
+    sk_rows = defaultdict(list)
+    for idx, row in df.iterrows():
+        if idx in match_groups:
+            continue
+        nk = row.get("name_key")
+        if nk and not pd.isna(nk):
+            parts = nk.split("_")
+            short = "_".join(parts[:4]) if len(parts) > 4 else None  # brand__ + 2 words
+            if short and len(short) > 5:
+                sk_stores[short].add(row["store_key"])
+                sk_rows[short].append(idx)
+
+    for sk, stores in sk_stores.items():
+        if len(stores) >= 2:
+            match_group_id += 1
+            for idx in sk_rows[sk]:
+                match_groups[idx] = match_group_id
+
+    pass3_groups = match_group_id - pass2_total
+    log.info(f"  Pass 3 groups: {pass3_groups}")
+
     # add match_group column
     df["match_group"] = df.index.map(lambda x: match_groups.get(x, None))
 
@@ -189,10 +214,11 @@ def fuzzy_boost(df, existing_groups):
     """
     Use rapidfuzz to find additional matches that deterministic
     matching missed (e.g., slight spelling differences).
-    Only runs if we haven't reached the 10k target yet.
+    Only runs if we haven't reached the target yet.
     """
-    if existing_groups >= config.TARGET_MATCHED_PRODUCTS:
-        log.info(f"Already have {existing_groups} matched groups, skipping fuzzy")
+    existing_matched_rows = df["match_group"].notna().sum()
+    if existing_matched_rows >= config.TARGET_MATCHED_PRODUCTS:
+        log.info(f"Already have {existing_matched_rows} matched rows (target {config.TARGET_MATCHED_PRODUCTS}), skipping fuzzy")
         return df
 
     log.info("Running fuzzy matching boost...")
@@ -226,7 +252,7 @@ def fuzzy_boost(df, existing_groups):
     stores = list(store_name_map.keys())
     new_group_id = int(df["match_group"].max() or 0) + 1
     new_matches = 0
-    FUZZY_CUTOFF = 68  # lower threshold for more matches
+    FUZZY_CUTOFF = 55  # lower threshold for more matches
 
     for i in range(len(stores)):
         for j in range(i + 1, len(stores)):
