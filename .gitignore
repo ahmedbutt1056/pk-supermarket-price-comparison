@@ -1,0 +1,41 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Large CSV data files (use .parquet instead)
+data/**/*.csv
+
+# Large parquet files (>15 MB)
+data/matched/all_with_matches.parquet
+data/processed/all_processed_data.parquet
+data/processed/processed_alfatah.parquet
+data/processed/processed_chaseup.parquet
+data/processed/processed_imtiaz.parquet
+data/raw/all_raw_data.parquet
+
+# Duplicate raw files (real_ prefix = same as raw_ after replication)
+data/raw/real_*.parquet
+data/raw/real_*.csv
+
+# Old synthetic store data
+data/raw/raw_chaseup_*.csv
+data/raw/raw_imtiaz_*.csv
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
