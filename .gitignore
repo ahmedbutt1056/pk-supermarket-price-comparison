@@ -12,11 +12,9 @@ data/**/*.csv
 
 # Large parquet files (>15 MB)
 data/matched/all_with_matches.parquet
-data/processed/all_processed_data.parquet
 data/processed/processed_alfatah.parquet
 data/processed/processed_chaseup.parquet
 data/processed/processed_imtiaz.parquet
-data/raw/all_raw_data.parquet
 
 # Duplicate raw files (real_ prefix = same as raw_ after replication)
 data/raw/real_*.parquet
