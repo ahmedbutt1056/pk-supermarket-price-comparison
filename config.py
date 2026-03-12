@@ -272,7 +272,7 @@ STORES = {
 # patterns and real Pakistani FMCG market structure.
 # ============================================================
 TARGET_RAW_ROWS = 500_000
-TARGET_MATCHED_PRODUCTS = 7_000
+TARGET_MATCHED_PRODUCTS = 10_000
 USE_DATA_GENERATOR = True  # set False if live scraping gives enough data
 
 # Number of products to generate per store per city

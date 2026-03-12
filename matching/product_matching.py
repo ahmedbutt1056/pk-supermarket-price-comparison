@@ -229,10 +229,8 @@ def fuzzy_boost(df, existing_groups):
         log.warning("rapidfuzz not installed, skipping fuzzy boost")
         return df
 
-    # Use product_name_clean for fuzzy matching; fall back to name_key
     name_col = "product_name_clean" if "product_name_clean" in df.columns else "product_name"
 
-    # De-duplicate unmatched rows: keep one representative per unique name per store
     unmatched = df[df["match_group"].isna()].copy()
     unmatched = unmatched[unmatched[name_col].notna()]
 
@@ -240,8 +238,8 @@ def fuzzy_boost(df, existing_groups):
         log.info("No unmatched rows to process")
         return df
 
-    # Build per-store name→indices lookup (one name maps to all rows with that name)
-    store_name_map = {}  # store -> {name: [indices]}
+    # Build per-store: unique name -> list of row indices
+    store_name_map = {}
     for store in unmatched["store_key"].unique():
         sdf = unmatched[unmatched["store_key"] == store]
         name_map = defaultdict(list)
@@ -252,31 +250,36 @@ def fuzzy_boost(df, existing_groups):
     stores = list(store_name_map.keys())
     new_group_id = int(df["match_group"].max() or 0) + 1
     new_matches = 0
-    FUZZY_CUTOFF = 55  # lower threshold for more matches
+    FUZZY_CUTOFF = 55
+    MAX_NAMES_PER_SIDE = 4000  # cap per store pair for speed
+    target_rows = config.TARGET_MATCHED_PRODUCTS
 
     for i in range(len(stores)):
         for j in range(i + 1, len(stores)):
-            store_a = stores[i]
-            store_b = stores[j]
-
+            store_a, store_b = stores[i], stores[j]
             names_a = store_name_map[store_a]
-            names_b = dict(store_name_map[store_b])  # mutable copy
-
+            names_b = store_name_map[store_b]
             if not names_a or not names_b:
                 continue
 
-            choice_names = list(names_b.keys())
+            # Limit candidates for speed: pick names with most rows first
+            list_a = sorted(names_a.keys(), key=lambda n: len(names_a[n]), reverse=True)[:MAX_NAMES_PER_SIDE]
+            list_b = sorted(names_b.keys(), key=lambda n: len(names_b[n]), reverse=True)[:MAX_NAMES_PER_SIDE]
 
-            log.info(f"  Fuzzy: {store_a} ({len(names_a)} names) vs {store_b} ({len(names_b)} names)")
+            log.info(f"  Fuzzy: {store_a} ({len(list_a)}) vs {store_b} ({len(list_b)})")
 
+            choice_set = list(list_b)
             matched_b = set()
-            for name_a, idxs_a in names_a.items():
-                # skip if already matched in this pass
+
+            for name_a in list_a:
+                idxs_a = names_a[name_a]
                 if not pd.isna(df.loc[idxs_a[0], "match_group"]):
                     continue
+                if not choice_set:
+                    break
 
                 result = rfprocess.extractOne(
-                    name_a, choice_names,
+                    name_a, choice_set,
                     scorer=fuzz.token_sort_ratio,
                     score_cutoff=FUZZY_CUTOFF
                 )
@@ -284,7 +287,6 @@ def fuzzy_boost(df, existing_groups):
                     matched_name_b, score, _ = result
                     idxs_b = names_b[matched_name_b]
 
-                    # Assign same match group to all rows with these names
                     for idx in idxs_a:
                         df.loc[idx, "match_group"] = new_group_id
                     for idx in idxs_b:
@@ -292,19 +294,15 @@ def fuzzy_boost(df, existing_groups):
 
                     new_group_id += 1
                     new_matches += 1
-
-                    # Remove matched name from choices
                     matched_b.add(matched_name_b)
-                    choice_names = [n for n in choice_names if n not in matched_b]
+                    choice_set = [n for n in choice_set if n not in matched_b]
 
-                    if new_matches + existing_groups >= config.TARGET_MATCHED_PRODUCTS:
-                        log.info(f"  Reached target! {new_matches} fuzzy matches added")
+                    current_matched = df["match_group"].notna().sum()
+                    if current_matched >= target_rows:
+                        log.info(f"  Reached {current_matched} matched rows! Done.")
                         return df
 
-                    if not choice_names:
-                        break
-
-            log.info(f"    → {new_matches} total fuzzy groups so far")
+            log.info(f"    -> {new_matches} fuzzy groups so far")
 
     log.info(f"  Fuzzy matching added {new_matches} new groups")
     return df
